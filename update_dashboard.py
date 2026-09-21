@@ -1,4 +1,4 @@
-"""Generate dashboard metrics and an equity curve from the demo backtest."""
+"""Generate dashboard metrics, equity curve, and trade history from the demo backtest."""
 import json
 from pathlib import Path
 
@@ -12,8 +12,18 @@ def main():
     m = calculate_metrics(trader)
 
     equity = [m.starting_balance]
-    for trade in trader.trades:
+    history = []
+    for number, trade in enumerate(trader.trades, start=1):
         equity.append(equity[-1] + trade.pnl)
+        history.append({
+            "number": number,
+            "side": trade.side,
+            "entry": trade.entry,
+            "exit": trade.exit,
+            "quantity": trade.quantity,
+            "pnl": trade.pnl,
+            "reason": trade.reason,
+        })
 
     data = {
         "starting_balance": m.starting_balance,
@@ -26,6 +36,7 @@ def main():
         "win_rate_pct": m.win_rate_pct,
         "max_drawdown_pct": m.max_drawdown_pct,
         "equity_curve": equity,
+        "trade_history": history,
     }
     Path("dashboard/data.json").write_text(
         json.dumps(data, indent=2) + "\n", encoding="utf-8"
