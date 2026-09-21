@@ -2,14 +2,14 @@
 <html lang="en">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rapsometeddy Trader</title><link rel="stylesheet" href="style.css"></head>
 <body><main class="app">
-<header><div><p class="eyebrow">PAPER TRADING • v2</p><h1>Rapsometeddy Trader</h1><p class="muted">Educational backtest dashboard</p></div><span class="badge">SIMULATION</span></header>
-<section class="grid"><article class="card"><span>Balance</span><strong id="balance">—</strong></article><article class="card"><span>Total P/L</span><strong id="pnl">—</strong></article><article class="card"><span>Return</span><strong id="return">—</strong></article><article class="card"><span>Win rate</span><strong id="winrate">—</strong></article></section>
-<section class="panel"><div class="panel-head"><h2>Price + EMA</h2><span id="candleCount">—</span></div><div class="chart large"><canvas id="priceChart"></canvas></div></section>
+<header><div><p class="eyebrow">AAPL MARKET • PAPER TRADING</p><h1>Rapsometeddy Trader</h1><p class="muted" id="feedStatus">Connecting to AAPL market data…</p></div><span class="badge">READ-ONLY</span></header>
+<section class="panel market"><div class="panel-head"><h2>AAPL market feed</h2><span id="marketUpdated">Waiting…</span></div><div class="market-main"><div><span>Latest price</span><strong id="marketPrice">—</strong><small id="marketCurrency">USD</small></div><div><span>Strategy signal</span><strong id="marketSignal">—</strong><small>EMA 20/50 + RSI 14</small></div></div><div class="market-meta"><span id="marketInterval">5-minute candles</span><span id="marketSource">Public read-only feed</span></div></section><section class="grid"><article class="card"><span>Balance</span><strong id="balance">—</strong></article><article class="card"><span>Total P/L</span><strong id="pnl">—</strong></article><article class="card"><span>Return</span><strong id="return">—</strong></article><article class="card"><span>Win rate</span><strong id="winrate">—</strong></article></section>
+<section class="panel"><div class="panel-head"><h2>AAPL Price + EMA</h2><span id="candleCount">—</span></div><div class="chart large"><canvas id="priceChart"></canvas></div></section>
 <section class="panel"><div class="panel-head"><h2>RSI</h2><span>14 period</span></div><div class="chart rsi-chart"><canvas id="rsiChart"></canvas></div></section>
 <section class="panel"><div class="panel-head"><h2>Equity curve</h2><span id="trades">—</span></div><div class="chart"><svg viewBox="0 0 600 180" preserveAspectRatio="none"><polyline id="equityLine" points=""/></svg></div><div class="stats"><div><span>Wins</span><b id="wins">—</b></div><div><span>Losses</span><b id="losses">—</b></div><div><span>Max drawdown</span><b id="drawdown">—</b></div></div></section>
 <section class="panel"><div class="panel-head"><h2>Trade history</h2><span>Latest backtest</span></div><div class="table-wrap"><table><thead><tr><th>#</th><th>Side</th><th>Entry</th><th>Exit</th><th>P/L</th><th>Reason</th></tr></thead><tbody id="tradeRows"><tr><td colspan="6">Loading…</td></tr></tbody></table></div></section>
 <section class="grid two"><article class="panel"><h2>Risk settings</h2><div class="rows"><div><span>Risk / trade</span><b>1%</b></div><div><span>Stop loss</span><b>2%</b></div><div><span>Take profit</span><b>4%</b></div></div></article><article class="panel"><h2>Strategy</h2><div class="rows"><div><span>Fast EMA</span><b id="fastEma">20</b></div><div><span>Slow EMA</span><b id="slowEma">50</b></div><div><span>RSI</span><b id="rsiPeriod">14</b></div></div></article></section>
-<section class="panel note"><strong>Paper only.</strong> Charts are generated from the historical demo dataset. No broker, exchange, or real-money orders are connected.</section>
+<section class="panel note"><strong>Paper only.</strong> AAPL market data is read-only. Signals and results are simulated; no broker, exchange, bank, or real-money orders are connected. Market updates depend on the public data feed and GitHub Actions schedule.</section>
 </main>
 <script>
 const money=n=>"R"+Number(n).toLocaleString("en-ZA",{minimumFractionDigits:2,maximumFractionDigits:2});
@@ -29,5 +29,42 @@ function drawCharts(candles){
  q.strokeStyle="#475569";q.setLineDash([4,4]);[30,50,70].forEach(v=>{q.beginPath();q.moveTo(0,ry(v));q.lineTo(rw,ry(v));q.stroke()});q.setLineDash([]);q.beginPath();candles.forEach((c,i)=>{if(c.rsi==null)return;i?q.lineTo(rx(i),ry(c.rsi)):q.moveTo(rx(i),ry(c.rsi))});q.strokeStyle="#fbbf24";q.lineWidth=2;q.stroke();
 }
 function drawTrades(ts){const b=document.getElementById("tradeRows");if(!ts.length){b.innerHTML='<tr><td colspan="6">No completed trades.</td></tr>';return}b.innerHTML=ts.slice().reverse().map(t=>'<tr><td>'+t.number+'</td><td><b>'+t.side+'</b></td><td>'+money(t.entry)+'</td><td>'+money(t.exit)+'</td><td class="'+(t.pnl>=0?"profit":"loss")+'">'+money(t.pnl)+'</td><td>'+t.reason.replaceAll("_"," ")+'</td></tr>').join("");}
-async function load(){try{const d=await (await fetch("data.json",{cache:"no-store"})).json();document.getElementById("balance").textContent=money(d.ending_balance);document.getElementById("pnl").textContent=money(d.total_pnl);document.getElementById("return").textContent=Number(d.return_pct).toFixed(2)+"%";document.getElementById("winrate").textContent=Number(d.win_rate_pct).toFixed(2)+"%";document.getElementById("trades").textContent=d.trades+" trades";document.getElementById("wins").textContent=d.winning_trades;document.getElementById("losses").textContent=d.losing_trades;document.getElementById("drawdown").textContent=Number(d.max_drawdown_pct).toFixed(2)+"%";document.getElementById("candleCount").textContent=d.candles.length+" candles";document.getElementById("fastEma").textContent=d.settings.fast_ema;document.getElementById("slowEma").textContent=d.settings.slow_ema;document.getElementById("rsiPeriod").textContent=d.settings.rsi_period;drawEquity(d.equity_curve);drawCharts(d.candles);drawTrades(d.trade_history||[]);}catch(e){document.querySelector(".muted").textContent="Could not load backtest data."}}load();
+async function load(){
+ try{
+  const base=await (await fetch("data.json",{cache:"no-store"})).json();
+  let d=base;
+  try{
+   const m=await (await fetch("market.json",{cache:"no-store"})).json();
+   if(m.candles&&m.candles.length){
+    const s=m.paper_simulation||{};
+    d={...base,ending_balance:s.ending_balance,total_pnl:s.total_pnl,return_pct:s.return_pct,win_rate_pct:s.win_rate_pct,trades:s.trades,winning_trades:s.winning_trades,losing_trades:s.losing_trades,max_drawdown_pct:s.max_drawdown_pct,candles:m.candles,equity_curve:[]};
+    document.getElementById("marketPrice").textContent=money(m.regular_market_price??m.latest_close);
+    document.getElementById("marketCurrency").textContent=m.currency||"USD";
+    document.getElementById("marketSignal").textContent=m.signal||"HOLD";
+    document.getElementById("marketUpdated").textContent=new Date(m.fetched_at||Date.now()).toLocaleTimeString();
+    document.getElementById("marketInterval").textContent=(m.interval||"5m")+" candles";
+    document.getElementById("marketSource").textContent="Read-only • "+(m.source||"public feed");
+    document.getElementById("feedStatus").textContent="AAPL market data connected • paper simulation";
+    document.getElementById("candleCount").textContent=m.candles.length+" recent candles";
+    drawCharts(m.candles);
+   }
+  }catch(e){document.getElementById("feedStatus").textContent="AAPL feed waiting for an update";}
+  document.getElementById("balance").textContent=money(d.ending_balance);
+  document.getElementById("pnl").textContent=money(d.total_pnl);
+  document.getElementById("return").textContent=Number(d.return_pct).toFixed(2)+"%";
+  document.getElementById("winrate").textContent=Number(d.win_rate_pct).toFixed(2)+"%";
+  document.getElementById("trades").textContent=d.trades+" trades";
+  document.getElementById("wins").textContent=d.winning_trades;
+  document.getElementById("losses").textContent=d.losing_trades;
+  document.getElementById("drawdown").textContent=Number(d.max_drawdown_pct).toFixed(2)+"%";
+  document.getElementById("fastEma").textContent=d.settings.fast_ema;
+  document.getElementById("slowEma").textContent=d.settings.slow_ema;
+  document.getElementById("rsiPeriod").textContent=d.settings.rsi_period;
+  if(d.equity_curve&&d.equity_curve.length>1)drawEquity(d.equity_curve);
+  if(!document.getElementById("marketPrice").textContent||document.getElementById("marketPrice").textContent==="—")drawCharts(d.candles);
+  drawTrades(d.trade_history||[]);
+ }catch(e){document.getElementById("feedStatus").textContent="Could not load dashboard data."}
+}
+load();
+setInterval(load,60000);
 </script></body></html>
