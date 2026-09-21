@@ -1,66 +1,33 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Rapsometeddy Trader</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<main class="app">
-<header><div><p class="eyebrow">PAPER TRADING • v1</p><h1>Rapsometeddy Trader</h1><p class="muted">Live dashboard from the latest backtest data</p></div><span class="badge">SIMULATION</span></header>
-<section class="grid">
-<article class="card"><span>Balance</span><strong id="balance">—</strong></article>
-<article class="card"><span>Total P/L</span><strong id="pnl">—</strong></article>
-<article class="card"><span>Return</span><strong id="return">—</strong></article>
-<article class="card"><span>Win rate</span><strong id="winrate">—</strong></article>
-</section>
-<section class="panel">
-<div class="panel-head"><h2>Equity curve</h2><span id="trades">—</span></div>
-<div class="chart"><svg viewBox="0 0 600 180" preserveAspectRatio="none" aria-label="Backtest equity curve"><polyline id="equityLine" points=""/></svg></div>
-<div class="stats"><div><span>Wins</span><b id="wins">—</b></div><div><span>Losses</span><b id="losses">—</b></div><div><span>Max drawdown</span><b id="drawdown">—</b></div></div>
-</section>
-<section class="panel">
-<div class="panel-head"><h2>Trade history</h2><span>Latest backtest</span></div>
-<div class="table-wrap"><table><thead><tr><th>#</th><th>Side</th><th>Entry</th><th>Exit</th><th>P/L</th><th>Reason</th></tr></thead><tbody id="tradeRows"><tr><td colspan="6">Loading…</td></tr></tbody></table></div>
-</section>
-<section class="grid two">
-<article class="panel"><h2>Risk settings</h2><div class="rows"><div><span>Risk / trade</span><b>1%</b></div><div><span>Stop loss</span><b>2%</b></div><div><span>Take profit</span><b>4%</b></div></div></article>
-<article class="panel"><h2>Strategy</h2><div class="rows"><div><span>Fast EMA</span><b>20</b></div><div><span>Slow EMA</span><b>50</b></div><div><span>RSI</span><b>14</b></div></div></article>
-</section>
-<section class="panel note"><strong>Paper only.</strong> This page reads generated backtest data. It does not connect to a broker or place real trades.</section>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rapsometeddy Trader</title><link rel="stylesheet" href="style.css"></head>
+<body><main class="app">
+<header><div><p class="eyebrow">PAPER TRADING • v2</p><h1>Rapsometeddy Trader</h1><p class="muted">Educational backtest dashboard</p></div><span class="badge">SIMULATION</span></header>
+<section class="grid"><article class="card"><span>Balance</span><strong id="balance">—</strong></article><article class="card"><span>Total P/L</span><strong id="pnl">—</strong></article><article class="card"><span>Return</span><strong id="return">—</strong></article><article class="card"><span>Win rate</span><strong id="winrate">—</strong></article></section>
+<section class="panel"><div class="panel-head"><h2>Price + EMA</h2><span id="candleCount">—</span></div><div class="chart large"><canvas id="priceChart"></canvas></div></section>
+<section class="panel"><div class="panel-head"><h2>RSI</h2><span>14 period</span></div><div class="chart rsi-chart"><canvas id="rsiChart"></canvas></div></section>
+<section class="panel"><div class="panel-head"><h2>Equity curve</h2><span id="trades">—</span></div><div class="chart"><svg viewBox="0 0 600 180" preserveAspectRatio="none"><polyline id="equityLine" points=""/></svg></div><div class="stats"><div><span>Wins</span><b id="wins">—</b></div><div><span>Losses</span><b id="losses">—</b></div><div><span>Max drawdown</span><b id="drawdown">—</b></div></div></section>
+<section class="panel"><div class="panel-head"><h2>Trade history</h2><span>Latest backtest</span></div><div class="table-wrap"><table><thead><tr><th>#</th><th>Side</th><th>Entry</th><th>Exit</th><th>P/L</th><th>Reason</th></tr></thead><tbody id="tradeRows"><tr><td colspan="6">Loading…</td></tr></tbody></table></div></section>
+<section class="grid two"><article class="panel"><h2>Risk settings</h2><div class="rows"><div><span>Risk / trade</span><b>1%</b></div><div><span>Stop loss</span><b>2%</b></div><div><span>Take profit</span><b>4%</b></div></div></article><article class="panel"><h2>Strategy</h2><div class="rows"><div><span>Fast EMA</span><b id="fastEma">20</b></div><div><span>Slow EMA</span><b id="slowEma">50</b></div><div><span>RSI</span><b id="rsiPeriod">14</b></div></div></article></section>
+<section class="panel note"><strong>Paper only.</strong> Charts are generated from the historical demo dataset. No broker, exchange, or real-money orders are connected.</section>
 </main>
 <script>
 const money=n=>"R"+Number(n).toLocaleString("en-ZA",{minimumFractionDigits:2,maximumFractionDigits:2});
-function drawEquity(values){
- if(!values||values.length<2)return;
- const min=Math.min(...values),max=Math.max(...values),range=max-min||1;
- const points=values.map((v,i)=>{const x=(i/(values.length-1))*600;const y=165-((v-min)/range)*145;return x.toFixed(1)+","+y.toFixed(1)}).join(" ");
- document.getElementById("equityLine").setAttribute("points",points);
+function drawEquity(v){if(!v||v.length<2)return;const min=Math.min(...v),max=Math.max(...v),range=max-min||1;document.getElementById("equityLine").setAttribute("points",v.map((x,i)=>((i/(v.length-1))*600).toFixed(1)+","+(165-((x-min)/range)*145).toFixed(1)).join(" "));}
+function setupCanvas(c){const d=devicePixelRatio||1,r=c.getBoundingClientRect();c.width=r.width*d;c.height=r.height*d;const x=c.getContext("2d");x.scale(d,d);return{x,w:r.width,h:r.height};}
+function drawCharts(candles){
+ const pc=setupCanvas(document.getElementById("priceChart")),x=pc.x,w=pc.w,h=pc.h;
+ const min=Math.min(...candles.map(c=>c.low)),max=Math.max(...candles.map(c=>c.high)),range=max-min||1;
+ const px=i=>i/(candles.length-1)*w, py=v=>h-20-(v-min)/range*(h-40), step=w/candles.length, cw=Math.max(2,step*.62);
+ x.strokeStyle="#64748b";x.lineWidth=1;
+ x.beginPath();x.moveTo(0,h-20);x.lineTo(w,h-20);x.stroke();
+ candles.forEach((c,i)=>{const xx=px(i),up=c.close>=c.open;x.strokeStyle=up?"#86efac":"#fca5a5";x.fillStyle=x.strokeStyle;x.beginPath();x.moveTo(xx,py(c.high));x.lineTo(xx,py(c.low));x.stroke();const top=py(Math.max(c.open,c.close)),bot=py(Math.min(c.open,c.close));x.fillRect(xx-cw/2,top,cw,Math.max(1,bot-top));});
+ function line(key,alpha){x.beginPath();let started=false;candles.forEach((c,i)=>{if(c[key]==null)return;const xx=px(i),yy=py(c[key]);if(!started){x.moveTo(xx,yy);started=true}else x.lineTo(xx,yy)});x.strokeStyle=alpha;x.lineWidth=2;x.stroke();}
+ line("ema_fast","#93c5fd");line("ema_slow","#c4b5fd");
+ x.fillStyle="#e2e8f0";x.font="11px system-ui";x.fillText("EMA20",8,15);x.fillText("EMA50",8,30);
+ const rc=setupCanvas(document.getElementById("rsiChart")),q=rc.x,rw=rc.w,rh=rc.h;const rsiVals=candles.map(c=>c.rsi).filter(v=>v!=null);const rmin=0,rmax=100,rx=i=>i/(candles.length-1)*rw,ry=v=>rh-15-(v/100)*(rh-30);
+ q.strokeStyle="#475569";q.setLineDash([4,4]);[30,50,70].forEach(v=>{q.beginPath();q.moveTo(0,ry(v));q.lineTo(rw,ry(v));q.stroke()});q.setLineDash([]);q.beginPath();candles.forEach((c,i)=>{if(c.rsi==null)return;i?q.lineTo(rx(i),ry(c.rsi)):q.moveTo(rx(i),ry(c.rsi))});q.strokeStyle="#fbbf24";q.lineWidth=2;q.stroke();
 }
-function drawTrades(trades){
- const body=document.getElementById("tradeRows");
- if(!trades.length){body.innerHTML='<tr><td colspan="6">No completed trades.</td></tr>';return}
- body.innerHTML=trades.slice().reverse().map(t=>`<tr>
- <td>${t.number}</td><td><b>${t.side}</b></td><td>${money(t.entry)}</td><td>${money(t.exit)}</td>
- <td class="${t.pnl>=0?"profit":"loss"}">${money(t.pnl)}</td><td>${t.reason.replaceAll("_"," ")}</td>
- </tr>`).join("");
-}
-async function load(){
- try{
-  const r=await fetch("data.json",{cache:"no-store"}); const d=await r.json();
-  document.getElementById("balance").textContent=money(d.ending_balance);
-  document.getElementById("pnl").textContent=money(d.total_pnl);
-  document.getElementById("return").textContent=Number(d.return_pct).toFixed(2)+"%";
-  document.getElementById("winrate").textContent=Number(d.win_rate_pct).toFixed(2)+"%";
-  document.getElementById("trades").textContent=d.trades+" trades";
-  document.getElementById("wins").textContent=d.winning_trades;
-  document.getElementById("losses").textContent=d.losing_trades;
-  document.getElementById("drawdown").textContent=Number(d.max_drawdown_pct).toFixed(2)+"%";
-  drawEquity(d.equity_curve); drawTrades(d.trade_history||[]);
- }catch(e){document.querySelector(".muted").textContent="Could not load backtest data."}
-}
-load();
-</script>
-</body>
-</html>
+function drawTrades(ts){const b=document.getElementById("tradeRows");if(!ts.length){b.innerHTML='<tr><td colspan="6">No completed trades.</td></tr>';return}b.innerHTML=ts.slice().reverse().map(t=>'<tr><td>'+t.number+'</td><td><b>'+t.side+'</b></td><td>'+money(t.entry)+'</td><td>'+money(t.exit)+'</td><td class="'+(t.pnl>=0?"profit":"loss")+'">'+money(t.pnl)+'</td><td>'+t.reason.replaceAll("_"," ")+'</td></tr>').join("");}
+async function load(){try{const d=await (await fetch("data.json",{cache:"no-store"})).json();document.getElementById("balance").textContent=money(d.ending_balance);document.getElementById("pnl").textContent=money(d.total_pnl);document.getElementById("return").textContent=Number(d.return_pct).toFixed(2)+"%";document.getElementById("winrate").textContent=Number(d.win_rate_pct).toFixed(2)+"%";document.getElementById("trades").textContent=d.trades+" trades";document.getElementById("wins").textContent=d.winning_trades;document.getElementById("losses").textContent=d.losing_trades;document.getElementById("drawdown").textContent=Number(d.max_drawdown_pct).toFixed(2)+"%";document.getElementById("candleCount").textContent=d.candles.length+" candles";document.getElementById("fastEma").textContent=d.settings.fast_ema;document.getElementById("slowEma").textContent=d.settings.slow_ema;document.getElementById("rsiPeriod").textContent=d.settings.rsi_period;drawEquity(d.equity_curve);drawCharts(d.candles);drawTrades(d.trade_history||[]);}catch(e){document.querySelector(".muted").textContent="Could not load backtest data."}}load();
+</script></body></html>
