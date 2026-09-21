@@ -15,15 +15,29 @@
 <article class="card"><span>Return</span><strong id="return">—</strong></article>
 <article class="card"><span>Win rate</span><strong id="winrate">—</strong></article>
 </section>
-<section class="panel"><div class="panel-head"><h2>Performance</h2><span id="trades">—</span></div><div class="stats"><div><span>Wins</span><b id="wins">—</b></div><div><span>Losses</span><b id="losses">—</b></div><div><span>Max drawdown</span><b id="drawdown">—</b></div></div></section>
+<section class="panel">
+<div class="panel-head"><h2>Equity curve</h2><span id="trades">—</span></div>
+<div class="chart"><svg viewBox="0 0 600 180" preserveAspectRatio="none" aria-label="Backtest equity curve"><polyline id="equityLine" points=""/></svg></div>
+<div class="stats"><div><span>Wins</span><b id="wins">—</b></div><div><span>Losses</span><b id="losses">—</b></div><div><span>Max drawdown</span><b id="drawdown">—</b></div></div>
+</section>
 <section class="grid two">
 <article class="panel"><h2>Risk settings</h2><div class="rows"><div><span>Risk / trade</span><b>1%</b></div><div><span>Stop loss</span><b>2%</b></div><div><span>Take profit</span><b>4%</b></div></div></article>
 <article class="panel"><h2>Strategy</h2><div class="rows"><div><span>Fast EMA</span><b>20</b></div><div><span>Slow EMA</span><b>50</b></div><div><span>RSI</span><b>14</b></div></div></article>
 </section>
-<section class="panel note"><strong>Paper only.</strong> This page reads <code>data.json</code> from the repository. It does not connect to a broker or place real trades.</section>
+<section class="panel note"><strong>Paper only.</strong> This page reads generated backtest data. It does not connect to a broker or place real trades.</section>
 </main>
 <script>
-const money = n => "R" + Number(n).toLocaleString("en-ZA",{minimumFractionDigits:2,maximumFractionDigits:2});
+const money=n=>"R"+Number(n).toLocaleString("en-ZA",{minimumFractionDigits:2,maximumFractionDigits:2});
+function drawEquity(values){
+ if(!values||values.length<2)return;
+ const min=Math.min(...values),max=Math.max(...values),range=max-min||1;
+ const points=values.map((v,i)=>{
+   const x=(i/(values.length-1))*600;
+   const y=165-((v-min)/range)*145;
+   return x.toFixed(1)+","+y.toFixed(1);
+ }).join(" ");
+ document.getElementById("equityLine").setAttribute("points",points);
+}
 async function load(){
  try{
   const r=await fetch("data.json",{cache:"no-store"}); const d=await r.json();
@@ -35,6 +49,7 @@ async function load(){
   document.getElementById("wins").textContent=d.winning_trades;
   document.getElementById("losses").textContent=d.losing_trades;
   document.getElementById("drawdown").textContent=Number(d.max_drawdown_pct).toFixed(2)+"%";
+  drawEquity(d.equity_curve);
  }catch(e){document.querySelector(".muted").textContent="Could not load backtest data."}
 }
 load();
