@@ -7,8 +7,7 @@ h1{font-size:clamp(26px,7vw,40px);margin:4px 0}.eyebrow{font-size:11px;letter-sp
 .card,.panel{background:#131720;border:1px solid #242a35;border-radius:18px;padding:17px;box-shadow:0 8px 30px #0005}
 .card strong{display:block;font-size:23px;margin-top:7px}.panel{margin-top:12px}
 .panel-head{display:flex;justify-content:space-between;align-items:center}h2{font-size:16px;margin:0 0 14px}
-.chart{height:180px;margin-top:4px;border-radius:12px;background:#0e1118;overflow:hidden}
-svg{width:100%;height:100%}polyline{fill:none;stroke:#8b9cff;stroke-width:4;vector-effect:non-scaling-stroke}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.stats div{background:#0e1118;border-radius:12px;padding:12px}.stats b{display:block;margin-top:5px}
 .rows>div{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #252b35}.rows>div:last-child{border:0}
-.note{font-size:13px;line-height:1.5}
-@media(max-width:420px){.app{padding:18px 12px}.grid{gap:8px}.card{padding:14px}.card strong{font-size:19px}}
+.note{font-size:13px;line-height:1.5}code{font-size:11px}
+@media(max-width:420px){.app{padding:18px 12px}.grid{gap:8px}.card{padding:14px}.card strong{font-size:19px}.stats{grid-template-columns:1fr}}
