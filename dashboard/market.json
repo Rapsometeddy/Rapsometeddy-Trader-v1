@@ -1,0 +1,18 @@
+{
+  "symbol": "AAPL",
+  "currency": "USD",
+  "signal": "HOLD",
+  "paper_simulation": {
+    "starting_balance": 10000,
+    "ending_balance": 10000,
+    "total_pnl": 0,
+    "return_pct": 0,
+    "trades": 0,
+    "winning_trades": 0,
+    "losing_trades": 0,
+    "win_rate_pct": 0,
+    "max_drawdown_pct": 0
+  },
+  "candles": [],
+  "status": "Waiting for the first scheduled market-data update."
+}
