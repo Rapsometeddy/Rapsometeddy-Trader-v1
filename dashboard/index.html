@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rapsometeddy Trader</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+<header>
+  <div>
+    <p class="eyebrow">PAPER TRADING • v1</p>
+    <h1>Rapsometeddy Trader</h1>
+    <p class="muted">Educational backtest dashboard</p>
+  </div>
+  <span class="badge">SIMULATION</span>
+</header>
+
+<section class="grid">
+  <article class="card"><span>Balance</span><strong id="balance">R10,000.00</strong></article>
+  <article class="card"><span>Total P/L</span><strong id="pnl">R0.00</strong></article>
+  <article class="card"><span>Return</span><strong id="return">0.00%</strong></article>
+  <article class="card"><span>Win rate</span><strong id="winrate">0.00%</strong></article>
+</section>
+
+<section class="panel">
+  <div class="panel-head"><h2>Performance</h2><span id="trades">0 trades</span></div>
+  <div class="chart"><svg viewBox="0 0 600 180" preserveAspectRatio="none" aria-label="Illustrative equity chart">
+    <polyline points="0,145 70,135 140,142 210,112 280,120 350,82 420,95 490,55 560,68 600,35"/>
+  </svg></div>
+</section>
+
+<section class="grid two">
+  <article class="panel"><h2>Risk settings</h2><div class="rows">
+    <div><span>Risk / trade</span><b>1%</b></div>
+    <div><span>Stop loss</span><b>2%</b></div>
+    <div><span>Take profit</span><b>4%</b></div>
+  </div></article>
+  <article class="panel"><h2>Strategy</h2><div class="rows">
+    <div><span>Fast EMA</span><b>20</b></div>
+    <div><span>Slow EMA</span><b>50</b></div>
+    <div><span>RSI</span><b>14</b></div>
+  </div></article>
+</section>
+
+<section class="panel note">
+  <strong>Paper only.</strong> Results are hypothetical and do not predict future performance. This dashboard does not connect to brokers or place real trades.
+</section>
+</main>
+</body>
+</html>
