@@ -8,45 +8,36 @@
 </head>
 <body>
 <main class="app">
-<header>
-  <div>
-    <p class="eyebrow">PAPER TRADING • v1</p>
-    <h1>Rapsometeddy Trader</h1>
-    <p class="muted">Educational backtest dashboard</p>
-  </div>
-  <span class="badge">SIMULATION</span>
-</header>
-
+<header><div><p class="eyebrow">PAPER TRADING • v1</p><h1>Rapsometeddy Trader</h1><p class="muted">Live dashboard from the latest backtest data</p></div><span class="badge">SIMULATION</span></header>
 <section class="grid">
-  <article class="card"><span>Balance</span><strong id="balance">R10,000.00</strong></article>
-  <article class="card"><span>Total P/L</span><strong id="pnl">R0.00</strong></article>
-  <article class="card"><span>Return</span><strong id="return">0.00%</strong></article>
-  <article class="card"><span>Win rate</span><strong id="winrate">0.00%</strong></article>
+<article class="card"><span>Balance</span><strong id="balance">—</strong></article>
+<article class="card"><span>Total P/L</span><strong id="pnl">—</strong></article>
+<article class="card"><span>Return</span><strong id="return">—</strong></article>
+<article class="card"><span>Win rate</span><strong id="winrate">—</strong></article>
 </section>
-
-<section class="panel">
-  <div class="panel-head"><h2>Performance</h2><span id="trades">0 trades</span></div>
-  <div class="chart"><svg viewBox="0 0 600 180" preserveAspectRatio="none" aria-label="Illustrative equity chart">
-    <polyline points="0,145 70,135 140,142 210,112 280,120 350,82 420,95 490,55 560,68 600,35"/>
-  </svg></div>
-</section>
-
+<section class="panel"><div class="panel-head"><h2>Performance</h2><span id="trades">—</span></div><div class="stats"><div><span>Wins</span><b id="wins">—</b></div><div><span>Losses</span><b id="losses">—</b></div><div><span>Max drawdown</span><b id="drawdown">—</b></div></div></section>
 <section class="grid two">
-  <article class="panel"><h2>Risk settings</h2><div class="rows">
-    <div><span>Risk / trade</span><b>1%</b></div>
-    <div><span>Stop loss</span><b>2%</b></div>
-    <div><span>Take profit</span><b>4%</b></div>
-  </div></article>
-  <article class="panel"><h2>Strategy</h2><div class="rows">
-    <div><span>Fast EMA</span><b>20</b></div>
-    <div><span>Slow EMA</span><b>50</b></div>
-    <div><span>RSI</span><b>14</b></div>
-  </div></article>
+<article class="panel"><h2>Risk settings</h2><div class="rows"><div><span>Risk / trade</span><b>1%</b></div><div><span>Stop loss</span><b>2%</b></div><div><span>Take profit</span><b>4%</b></div></div></article>
+<article class="panel"><h2>Strategy</h2><div class="rows"><div><span>Fast EMA</span><b>20</b></div><div><span>Slow EMA</span><b>50</b></div><div><span>RSI</span><b>14</b></div></div></article>
 </section>
-
-<section class="panel note">
-  <strong>Paper only.</strong> Results are hypothetical and do not predict future performance. This dashboard does not connect to brokers or place real trades.
-</section>
+<section class="panel note"><strong>Paper only.</strong> This page reads <code>data.json</code> from the repository. It does not connect to a broker or place real trades.</section>
 </main>
+<script>
+const money = n => "R" + Number(n).toLocaleString("en-ZA",{minimumFractionDigits:2,maximumFractionDigits:2});
+async function load(){
+ try{
+  const r=await fetch("data.json",{cache:"no-store"}); const d=await r.json();
+  document.getElementById("balance").textContent=money(d.ending_balance);
+  document.getElementById("pnl").textContent=money(d.total_pnl);
+  document.getElementById("return").textContent=Number(d.return_pct).toFixed(2)+"%";
+  document.getElementById("winrate").textContent=Number(d.win_rate_pct).toFixed(2)+"%";
+  document.getElementById("trades").textContent=d.trades+" trades";
+  document.getElementById("wins").textContent=d.winning_trades;
+  document.getElementById("losses").textContent=d.losing_trades;
+  document.getElementById("drawdown").textContent=Number(d.max_drawdown_pct).toFixed(2)+"%";
+ }catch(e){document.querySelector(".muted").textContent="Could not load backtest data."}
+}
+load();
+</script>
 </body>
 </html>
