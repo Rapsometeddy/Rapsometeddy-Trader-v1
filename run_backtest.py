@@ -3,6 +3,7 @@ import pandas as pd
 
 from config import INITIAL_BALANCE
 from backtest.engine import run
+from backtest.metrics import calculate_metrics
 
 def make_demo_data() -> pd.DataFrame:
     closes = [
@@ -25,6 +26,11 @@ def main() -> None:
     print(f"Starting balance: {trader.starting_balance:.2f}")
     print(f"Ending balance:   {trader.balance:.2f}")
     print(f"Trades:           {len(trader.trades)}")
+    metrics = calculate_metrics(trader)
+    print(f"Total P/L:         {metrics.total_pnl:.2f}")
+    print(f"Return:            {metrics.return_pct:.2f}%")
+    print(f"Win rate:          {metrics.win_rate_pct:.2f}%")
+    print(f"Max drawdown:      {metrics.max_drawdown_pct:.2f}%")
     for trade in trader.trades:
         print(
             f"{trade.side:4} entry={trade.entry:.2f} "
