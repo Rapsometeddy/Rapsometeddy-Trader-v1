@@ -8,7 +8,7 @@
   "signal": "HOLD",
   "range": "5d",
   "interval": "5m",
-  "fetched_at": "2026-09-23T20:39:48.675559+00:00",
+  "fetched_at": "2026-09-23T23:10:47.451990+00:00",
   "source": "Yahoo Finance chart endpoint (public, unofficial)",
   "paper_simulation": {
     "starting_balance": 10000.0,
