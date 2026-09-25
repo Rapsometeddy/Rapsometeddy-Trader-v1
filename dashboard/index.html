@@ -9,6 +9,11 @@
 <section class="panel"><div class="panel-head"><h2>Equity curve</h2><span id="trades">—</span></div><div class="chart"><svg viewBox="0 0 600 180" preserveAspectRatio="none"><polyline id="equityLine" points=""/></svg></div><div class="stats"><div><span>Wins</span><b id="wins">—</b></div><div><span>Losses</span><b id="losses">—</b></div><div><span>Max drawdown</span><b id="drawdown">—</b></div></div></section>
 <section class="panel"><div class="panel-head"><h2>Trade history</h2><span>Latest backtest</span></div><div class="table-wrap"><table><thead><tr><th>#</th><th>Side</th><th>Entry</th><th>Exit</th><th>P/L</th><th>Reason</th></tr></thead><tbody id="tradeRows"><tr><td colspan="6">Loading…</td></tr></tbody></table></div></section>
 <section class="grid two"><article class="panel"><h2>Risk settings</h2><div class="rows"><div><span>Risk / trade</span><b>1%</b></div><div><span>Stop loss</span><b>2%</b></div><div><span>Take profit</span><b>4%</b></div></div></article><article class="panel"><h2>Strategy</h2><div class="rows"><div><span>Fast EMA</span><b id="fastEma">20</b></div><div><span>Slow EMA</span><b id="slowEma">50</b></div><div><span>RSI</span><b id="rsiPeriod">14</b></div></div></article></section>
+<section class="panel">
+<div class="panel-head"><h2>FX • New York session</h2><span id="fxUpdated">Loading…</span></div>
+<p class="muted">Educational, read-only market analysis. Session filter uses New York local time (08:00–17:00) and automatically follows daylight saving time.</p>
+<div class="table-wrap"><table><thead><tr><th>Pair</th><th>Price</th><th>Signal</th><th>5D NY-session trades</th><th>Paper return</th></tr></thead><tbody id="fxRows"><tr><td colspan="5">Loading FX markets…</td></tr></tbody></table></div>
+</section>
 <section class="panel note"><strong>Paper only.</strong> AAPL market data is read-only. Signals and results are simulated; no broker, exchange, bank, or real-money orders are connected. Market updates depend on the public data feed and GitHub Actions schedule.</section>
 </main>
 <script>
@@ -67,4 +72,24 @@ async function load(){
 }
 load();
 setInterval(load,60000);
-</script></body></html>
+</script><script>
+async function loadForex(){
+ try{
+  const f=await (await fetch("forex.json",{cache:"no-store"})).json();
+  const rows=document.getElementById("fxRows");
+  const moneyFx=n=>Number(n).toLocaleString("en-US",{minimumFractionDigits:5,maximumFractionDigits:5});
+  const markets=f.markets||{};
+  rows.innerHTML=Object.values(markets).map(m=>{
+    const p=m.paper_simulation||{};
+    const cls=m.signal==="BUY"?"profit":m.signal==="SELL"?"loss":"";
+    return '<tr><td><b>'+m.pair+'</b></td><td>'+moneyFx(m.latest_close)+'</td><td class="'+cls+'"><b>'+m.signal+'</b></td><td>'+p.trades+'</td><td>'+Number(p.return_pct).toFixed(2)+'%</td></tr>';
+  }).join("") || '<tr><td colspan="5">No FX snapshot available yet.</td></tr>';
+  document.getElementById("fxUpdated").textContent=new Date(f.updated_at||Date.now()).toLocaleTimeString();
+ }catch(e){
+  document.getElementById("fxRows").innerHTML='<tr><td colspan="5">FX snapshot waiting for GitHub Actions.</td></tr>';
+ }
+}
+loadForex();
+setInterval(loadForex,60000);
+</script>
+</body></html>
