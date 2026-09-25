@@ -14,6 +14,13 @@
 <p class="muted">Educational, read-only market analysis. Session filter uses New York local time (08:00–17:00) and automatically follows daylight saving time.</p>
 <div class="table-wrap"><table><thead><tr><th>Pair</th><th>Price</th><th>Signal</th><th>5D NY-session trades</th><th>Paper return</th></tr></thead><tbody id="fxRows"><tr><td colspan="5">Loading FX markets…</td></tr></tbody></table></div>
 </section>
+<section class="panel">
+<div class="panel-head"><h2>⚡ Live FX preset lab</h2><span id="liveFxUpdated">Waiting…</span></div>
+<p class="muted">Public market candles → simulated only. Select a pair and compare preset behaviour. No orders are sent.</p>
+<div class="rows"><div><span>Pair</span><select id="fxPair"></select></div><div><span>Preset</span><select id="fxPreset"></select></div></div>
+<div class="grid"><article class="card"><span>Live price</span><strong id="labPrice">—</strong></article><article class="card"><span>Signal</span><strong id="labSignal">—</strong></article><article class="card"><span>Paper P/L</span><strong id="labPnl">—</strong></article><article class="card"><span>Paper return</span><strong id="labReturn">—</strong></article></div>
+<div class="stats"><div><span>Trades</span><b id="labTrades">—</b></div><div><span>Wins</span><b id="labWins">—</b></div><div><span>Losses</span><b id="labLosses">—</b></div><div><span>Open position</span><b id="labPosition">None</b></div></div>
+</section>
 <section class="panel note"><strong>Paper only.</strong> AAPL market data is read-only. Signals and results are simulated; no broker, exchange, bank, or real-money orders are connected. Market updates depend on the public data feed and GitHub Actions schedule.</section>
 </main>
 <script>
@@ -92,4 +99,26 @@ async function loadForex(){
 loadForex();
 setInterval(loadForex,60000);
 </script>
-</body></html>
+<script>
+let liveFx=null;
+function refreshLab(){
+ if(!liveFx)return;
+ const pair=document.getElementById("fxPair").value,preset=document.getElementById("fxPreset").value,m=liveFx.markets[pair];
+ if(!m||m.error){document.getElementById("labSignal").textContent="Unavailable";return}
+ const x=m.presets[preset]; document.getElementById("labPrice").textContent=Number(m.price).toLocaleString("en-US",{minimumFractionDigits:5,maximumFractionDigits:5});
+ document.getElementById("labSignal").textContent=x.last_signal; document.getElementById("labPnl").textContent="R"+Number(x.total_pnl).toFixed(2);
+ document.getElementById("labReturn").textContent=Number(x.return_pct).toFixed(2)+"%"; document.getElementById("labTrades").textContent=x.trades;
+ document.getElementById("labWins").textContent=x.wins; document.getElementById("labLosses").textContent=x.losses;
+ document.getElementById("labPosition").textContent=x.open_position?x.open_position.side+" @ "+Number(x.open_position.entry).toFixed(5):"None";
+}
+async function loadLiveFx(){
+ try{liveFx=await (await fetch("live-forex.json",{cache:"no-store"})).json();
+ const ps=document.getElementById("fxPair"),pr=document.getElementById("fxPreset");
+ ps.innerHTML=Object.keys(liveFx.markets).map(x=>'<option>'+x+'</option>').join("");
+ pr.innerHTML=Object.keys(liveFx.presets).map(x=>'<option>'+x+'</option>').join("");
+ ps.onchange=refreshLab;pr.onchange=refreshLab;refreshLab();
+ document.getElementById("liveFxUpdated").textContent=new Date(liveFx.updated_at).toLocaleTimeString();
+ }catch(e){document.getElementById("liveFxUpdated").textContent="Waiting for live snapshot…"}
+}
+loadLiveFx();setInterval(loadLiveFx,60000);
+</script></body></html>
