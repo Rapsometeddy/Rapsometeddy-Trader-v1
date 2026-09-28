@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-28T03:53:23.072797+00:00",
+  "updated_at": "2026-09-28T10:21:35.610843+00:00",
   "paper_only": true,
   "presets": {
     "Balanced": {
@@ -37,8 +37,8 @@
   },
   "markets": {
     "EUR/USD": {
-      "price": 1.1390818357467651,
-      "timestamp": 1790567581,
+      "price": 1.1370097398757935,
+      "timestamp": 1790590800,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -99,8 +99,8 @@
       }
     },
     "GBP/USD": {
-      "price": 1.324257731437683,
-      "timestamp": 1790567581,
+      "price": 1.32501220703125,
+      "timestamp": 1790590800,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -161,8 +161,8 @@
       }
     },
     "USD/JPY": {
-      "price": 157.78500366210938,
-      "timestamp": 1790567601,
+      "price": 157.10699462890625,
+      "timestamp": 1790590894,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -223,8 +223,8 @@
       }
     },
     "AUD/USD": {
-      "price": 0.7028394937515259,
-      "timestamp": 1790567521,
+      "price": 0.7011638879776001,
+      "timestamp": 1790590680,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -285,8 +285,8 @@
       }
     },
     "USD/CAD": {
-      "price": 1.415120005607605,
-      "timestamp": 1790567603,
+      "price": 1.4165500402450562,
+      "timestamp": 1790590895,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -347,8 +347,8 @@
       }
     },
     "USD/CHF": {
-      "price": 0.8294600248336792,
-      "timestamp": 1790567601,
+      "price": 0.8315500020980835,
+      "timestamp": 1790590895,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -409,8 +409,8 @@
       }
     },
     "NZD/USD": {
-      "price": 0.5672149658203125,
-      "timestamp": 1790567521,
+      "price": 0.5656748414039612,
+      "timestamp": 1790590680,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
