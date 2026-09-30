@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T23:46:12.081020+00:00",
+  "updated_at": "2026-09-30T02:27:42.664269+00:00",
   "paper_only": true,
   "presets": {
     "Balanced": {
@@ -38,7 +38,7 @@
   "markets": {
     "EUR/USD": {
       "price": 1.1343011856079102,
-      "timestamp": 1790725500,
+      "timestamp": 1790735218,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -99,8 +99,8 @@
       }
     },
     "GBP/USD": {
-      "price": 1.3229963779449463,
-      "timestamp": 1790725500,
+      "price": 1.323118805885315,
+      "timestamp": 1790735218,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -161,8 +161,8 @@
       }
     },
     "USD/JPY": {
-      "price": 157.427001953125,
-      "timestamp": 1790725571,
+      "price": 156.43099975585938,
+      "timestamp": 1790735261,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -223,8 +223,8 @@
       }
     },
     "AUD/USD": {
-      "price": 0.6989585757255554,
-      "timestamp": 1790725440,
+      "price": 0.6967670321464539,
+      "timestamp": 1790735158,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -285,8 +285,8 @@
       }
     },
     "USD/CAD": {
-      "price": 1.4187999963760376,
-      "timestamp": 1790725571,
+      "price": 1.419469952583313,
+      "timestamp": 1790735262,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -347,8 +347,8 @@
       }
     },
     "USD/CHF": {
-      "price": 0.8342599868774414,
-      "timestamp": 1790725572,
+      "price": 0.8331900238990784,
+      "timestamp": 1790735262,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -409,8 +409,8 @@
       }
     },
     "NZD/USD": {
-      "price": 0.5639839768409729,
-      "timestamp": 1790725440,
+      "price": 0.5644615292549133,
+      "timestamp": 1790735158,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
