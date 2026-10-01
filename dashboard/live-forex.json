@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T11:47:52.921101+00:00",
+  "updated_at": "2026-10-01T17:30:48.087806+00:00",
   "paper_only": true,
   "presets": {
     "Balanced": {
@@ -37,8 +37,8 @@
   },
   "markets": {
     "EUR/USD": {
-      "price": 1.1303266286849976,
-      "timestamp": 1790855218,
+      "price": 1.1230907440185547,
+      "timestamp": 1790875796,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -56,16 +56,16 @@
         },
         "Fast Day Trade": {
           "starting_balance": 10000.0,
-          "ending_balance": 10000.0,
-          "total_pnl": 0.0,
-          "return_pct": 0.0,
-          "trades": 0,
+          "ending_balance": 9900.0,
+          "total_pnl": -100.0,
+          "return_pct": -1.0,
+          "trades": 1,
           "wins": 0,
-          "losses": 0,
-          "last_signal": "BUY",
+          "losses": 1,
+          "last_signal": "SELL",
           "open_position": {
-            "side": "BUY",
-            "entry": 1.133529782295227
+            "side": "SELL",
+            "entry": 1.121956706047058
           }
         },
         "Trend Study": {
@@ -84,23 +84,23 @@
         },
         "Conservative": {
           "starting_balance": 10000.0,
-          "ending_balance": 10000.0,
-          "total_pnl": 0.0,
-          "return_pct": 0.0,
-          "trades": 0,
+          "ending_balance": 9900.0,
+          "total_pnl": -100.0,
+          "return_pct": -1.0,
+          "trades": 1,
           "wins": 0,
-          "losses": 0,
-          "last_signal": "BUY",
+          "losses": 1,
+          "last_signal": "SELL",
           "open_position": {
-            "side": "BUY",
-            "entry": 1.133529782295227
+            "side": "SELL",
+            "entry": 1.121956706047058
           }
         }
       }
     },
     "GBP/USD": {
-      "price": 1.323784351348877,
-      "timestamp": 1790855218,
+      "price": 1.3195570707321167,
+      "timestamp": 1790875796,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -161,8 +161,8 @@
       }
     },
     "USD/JPY": {
-      "price": 157.91099548339844,
-      "timestamp": 1790855271,
+      "price": 157.62600708007812,
+      "timestamp": 1790875846,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -223,8 +223,8 @@
       }
     },
     "AUD/USD": {
-      "price": 0.6950719356536865,
-      "timestamp": 1790855158,
+      "price": 0.6924248337745667,
+      "timestamp": 1790875796,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -285,8 +285,8 @@
       }
     },
     "USD/CAD": {
-      "price": 1.4242899417877197,
-      "timestamp": 1790855273,
+      "price": 1.4232499599456787,
+      "timestamp": 1790875848,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -347,8 +347,8 @@
       }
     },
     "USD/CHF": {
-      "price": 0.835099995136261,
-      "timestamp": 1790855273,
+      "price": 0.8308699727058411,
+      "timestamp": 1790875848,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -409,8 +409,8 @@
       }
     },
     "NZD/USD": {
-      "price": 0.5617662072181702,
-      "timestamp": 1790855158,
+      "price": 0.5605067014694214,
+      "timestamp": 1790875796,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
