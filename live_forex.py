@@ -10,7 +10,7 @@ import pandas as pd
 from bot.strategy import add_indicators, generate_signal
 from config import INITIAL_BALANCE, RISK_PER_TRADE, STOP_LOSS_PCT, TAKE_PROFIT_PCT
 
-PAIRS={"EUR/USD":"EURUSD=X","GBP/USD":"GBPUSD=X","USD/JPY":"JPY=X","AUD/USD":"AUDUSD=X","USD/CAD":"CAD=X","USD/CHF":"CHF=X","NZD/USD":"NZDUSD=X"}
+PAIRS={"EUR/USD":"EURUSD=X","GBP/USD":"GBPUSD=X","USD/JPY":"JPY=X","USD/CAD":"CAD=X","USD/CHF":"CHF=X","AUD/USD":"AUDUSD=X","NZD/USD":"NZDUSD=X","EUR/JPY":"EURJPY=X","GBP/JPY":"GBPJPY=X"}
 PRESETS={
  "Balanced":{"fast_ema":20,"slow_ema":50,"rsi_buy":50,"rsi_sell":50,"sl":0.02,"tp":0.04},
  "Fast Day Trade":{"fast_ema":9,"slow_ema":21,"rsi_buy":55,"rsi_sell":45,"sl":0.01,"tp":0.02},
