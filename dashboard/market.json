@@ -8,7 +8,7 @@
   "signal": "BUY",
   "range": "5d",
   "interval": "5m",
-  "fetched_at": "2026-10-02T05:47:39.986160+00:00",
+  "fetched_at": "2026-10-02T12:29:53.248734+00:00",
   "source": "Yahoo Finance chart endpoint (public, unofficial)",
   "paper_simulation": {
     "starting_balance": 10000.0,
@@ -804,8 +804,8 @@
     },
     {
       "timestamp": 1790688600,
-      "open": 333.2078857421875,
-      "high": 334.0398864746094,
+      "open": 337.05999755859375,
+      "high": 337.05999755859375,
       "low": 332.05999755859375,
       "close": 333.7550048828125,
       "volume": 2035661.0,
