@@ -21,6 +21,11 @@
 <div class="grid"><article class="card"><span>Live price</span><strong id="labPrice">—</strong></article><article class="card"><span>Signal</span><strong id="labSignal">—</strong></article><article class="card"><span>Paper P/L</span><strong id="labPnl">—</strong></article><article class="card"><span>Paper return</span><strong id="labReturn">—</strong></article></div>
 <div class="stats"><div><span>Trades</span><b id="labTrades">—</b></div><div><span>Wins</span><b id="labWins">—</b></div><div><span>Losses</span><b id="labLosses">—</b></div><div><span>Open position</span><b id="labPosition">None</b></div></div>
 </section>
+<section class="panel">
+<div class="panel-head"><h2>🧭 Market Scanner</h2><span id="scannerUpdated">Waiting…</span></div>
+<p class="muted">15-minute educational scan using EMA 9/21/50, RSI, MACD, ATR and VWAP. It identifies indicator conditions; it does not predict outcomes or place orders.</p>
+<div class="table-wrap"><table><thead><tr><th>Market</th><th>Price</th><th>Condition</th><th>Score</th><th>RSI</th><th>VWAP</th></tr></thead><tbody id="scannerRows"><tr><td colspan="6">Waiting for scanner snapshot…</td></tr></tbody></table></div>
+</section>
 <section class="panel note"><strong>Paper only.</strong> AAPL market data is read-only. Signals and results are simulated; no broker, exchange, bank, or real-money orders are connected. Market updates depend on the public data feed and GitHub Actions schedule.</section>
 </main>
 <script>
@@ -121,4 +126,19 @@ async function loadLiveFx(){
  }catch(e){document.getElementById("liveFxUpdated").textContent="Waiting for live snapshot…"}
 }
 loadLiveFx();setInterval(loadLiveFx,60000);
-</script></body></html>
+</script><script>
+async function loadScanner(){
+ try{
+  const s=await (await fetch("scanner.json",{cache:"no-store"})).json();
+  const rows=document.getElementById("scannerRows");
+  const markets=s.markets||{};
+  rows.innerHTML=Object.entries(markets).map(([name,m])=>{
+   const cls=m.signal==="BUY SETUP"?"profit":m.signal==="SELL SETUP"?"loss":"";
+   return '<tr><td><b>'+name+'</b></td><td>'+(m.price??"—")+'</td><td class="'+cls+'"><b>'+m.signal+'</b></td><td>'+m.score+'</td><td>'+(m.rsi??"—")+'</td><td>'+(m.vwap??"—")+'</td></tr>';
+  }).join("")||'<tr><td colspan="6">No scanner data.</td></tr>';
+  document.getElementById("scannerUpdated").textContent=new Date(s.updated_at||Date.now()).toLocaleTimeString();
+ }catch(e){document.getElementById("scannerUpdated").textContent="Waiting for automation…"}
+}
+loadScanner();setInterval(loadScanner,60000);
+</script>
+</body></html>
