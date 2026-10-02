@@ -151,4 +151,33 @@ async function loadScanner(){
 }
 loadScanner();setInterval(loadScanner,60000);
 </script>
-<script>const $=id=>document.getElementById(id);const money=n=>"R"+Number(n||0).toLocaleString("en-ZA",{minimumFractionDigits:2,maximumFractionDigits:2});function riskCalc(){const b=+$("rcBalance").value||0,r=(+$("rcRisk").value||0)/100,e=+$("rcEntry").value||0,s=+$("rcStop").value||0,c=b*r,d=Math.abs(e-s),q=d?c/d:0;$("rcRiskCash").textContent=money(c);$("rcDistance").textContent=d.toFixed(5);$("rcQty").textContent=q.toFixed(4)}["rcBalance","rcRisk","rcEntry","rcStop"].forEach(id=>$(id)?.addEventListener("input",riskCalc));function saveJournal(){const k="rt-journal",r=JSON.parse(localStorage.getItem(k)||"[]");r.push({date:new Date().toLocaleString(),market:$("jMarket").value,side:$("jSide").value,entry:$("jEntry").value,exit:$("jExit").value,reason:$("jReason").value,result:$("jResult").value});localStorage.setItem(k,JSON.stringify(r));renderJournal()}function renderJournal(){const r=JSON.parse(localStorage.getItem("rt-journal")||"[]");$("journalRows").innerHTML=r.slice().reverse().map(x=>"<tr><td>"+x.date+"</td><td>"+x.market+"</td><td>"+x.side+"</td><td>"+x.entry+"</td><td>"+x.exit+"</td><td>"+x.result+"</td><td>"+x.reason+"</td></tr>").join("")||"<tr><td colspan=7>No journal entries yet.</td></tr>"}function clearJournal(){localStorage.removeItem("rt-journal");renderJournal()}function backtestCalc(){const w=+$("btWins").value||0,l=+$("btLosses").value||0,aw=+$("btWinAmt").value||0,al=+$("btLossAmt").value||0,t=w+l,wr=t?w/t*100:0,e=t?(w*aw-l*al)/t:0;$("btWinRate").textContent=wr.toFixed(1)+"%";$("btExpectancy").textContent=money(e);$("btPF").textContent=al&&l?(w*aw)/(l*al):"—"}["btWins","btLosses","btWinAmt","btLossAmt"].forEach(id=>$(id)?.addEventListener("input",backtestCalc));riskCalc();backtestCalc();renderJournal();</script><script src="advanced.js"></script><script src="strategy-lab.js"></script></body></html>
+<script>const $=id=>document.getElementById(id);const money=n=>"R"+Number(n||0).toLocaleString("en-ZA",{minimumFractionDigits:2,maximumFractionDigits:2});function riskCalc(){const b=+$("rcBalance").value||0,r=(+$("rcRisk").value||0)/100,e=+$("rcEntry").value||0,s=+$("rcStop").value||0,c=b*r,d=Math.abs(e-s),q=d?c/d:0;$("rcRiskCash").textContent=money(c);$("rcDistance").textContent=d.toFixed(5);$("rcQty").textContent=q.toFixed(4)}["rcBalance","rcRisk","rcEntry","rcStop"].forEach(id=>$(id)?.addEventListener("input",riskCalc));function saveJournal(){const k="rt-journal",r=JSON.parse(localStorage.getItem(k)||"[]");r.push({date:new Date().toLocaleString(),market:$("jMarket").value,side:$("jSide").value,entry:$("jEntry").value,exit:$("jExit").value,reason:$("jReason").value,result:$("jResult").value});localStorage.setItem(k,JSON.stringify(r));renderJournal()}function renderJournal(){const r=JSON.parse(localStorage.getItem("rt-journal")||"[]");$("journalRows").innerHTML=r.slice().reverse().map(x=>"<tr><td>"+x.date+"</td><td>"+x.market+"</td><td>"+x.side+"</td><td>"+x.entry+"</td><td>"+x.exit+"</td><td>"+x.result+"</td><td>"+x.reason+"</td></tr>").join("")||"<tr><td colspan=7>No journal entries yet.</td></tr>"}function clearJournal(){localStorage.removeItem("rt-journal");renderJournal()}function backtestCalc(){const w=+$("btWins").value||0,l=+$("btLosses").value||0,aw=+$("btWinAmt").value||0,al=+$("btLossAmt").value||0,t=w+l,wr=t?w/t*100:0,e=t?(w*aw-l*al)/t:0;$("btWinRate").textContent=wr.toFixed(1)+"%";$("btExpectancy").textContent=money(e);$("btPF").textContent=al&&l?(w*aw)/(l*al):"—"}["btWins","btLosses","btWinAmt","btLossAmt"].forEach(id=>$(id)?.addEventListener("input",backtestCalc));riskCalc();backtestCalc();renderJournal();</script><script src="advanced.js"></script><script src="strategy-lab.js"></script><script>
+(function(){
+const LIVE_KEY="rt-live";
+const symbols={"AAPL":"AAPL","EUR/USD":"EURUSD=X","GBP/USD":"GBPUSD=X","USD/JPY":"JPY=X","AUD/USD":"AUDUSD=X","USD/CAD":"CAD=X","USD/CHF":"CHF=X","NZD/USD":"NZDUSD=X","EUR/JPY":"EURJPY=X","GBP/JPY":"GBPJPY=X"};
+let timer;
+async function liveQuote(sym){
+ try{
+  const r=await fetch("https://query1.finance.yahoo.com/v8/finance/chart/"+encodeURIComponent(symbols[sym])+"?range=1d&interval=1m&includePrePost=true",{cache:"no-store"});
+  if(!r.ok) throw new Error("feed "+r.status);
+  const j=await r.json(),m=j.chart.result[0],q=m.indicators.quote[0],i=q.close.length-1;
+  return {price:q.close[i],time:(m.timestamp[i]||Date.now()/1000)*1000};
+ }catch(e){return null}
+}
+async function updateLive(){
+ const targets=["AAPL","EUR/USD","GBP/USD","USD/JPY","AUD/USD","USD/CAD","USD/CHF","NZD/USD"];
+ let ok=0;
+ for(const s of targets){
+  const x=await liveQuote(s); if(!x) continue; ok++;
+  if(s==="AAPL"){
+   const els=document.querySelectorAll("body *");
+   els.forEach(el=>{if(el.children.length===0&&/Latest price/.test(el.textContent||"")){const n=el.parentElement?.querySelector("b");if(n)n.textContent="R"+Number(x.price).toLocaleString("en-ZA",{minimumFractionDigits:2,maximumFractionDigits:2})}});
+  }
+ }
+ let badge=document.getElementById("liveFeedStatus");
+ if(!badge){badge=document.createElement("div");badge.id="liveFeedStatus";badge.style.cssText="position:fixed;right:10px;top:10px;z-index:9999;padding:7px 10px;border-radius:999px;background:#17251b;border:1px solid #315b3b;color:#9df0ad;font:600 12px system-ui";document.body.appendChild(badge)}
+ badge.textContent=ok?("● LIVE • "+new Date().toLocaleTimeString()):"● FEED UNAVAILABLE";
+}
+window.addEventListener("load",()=>{updateLive();timer=setInterval(updateLive,30000)});
+})();
+</script></body></html>
