@@ -1,0 +1,35 @@
+name: Update market intelligence
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/10 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Update AAPL snapshot
+        run: python market_data.py
+      - name: Update FX paper lab
+        run: python live_forex.py
+      - name: Update market scanner
+        run: python scanner.py
+      - name: Commit snapshots
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dashboard/market.json dashboard/live-forex.json dashboard/scanner.json
+          git diff --cached --quiet || git commit -m "Update market intelligence snapshots"
+          git push
