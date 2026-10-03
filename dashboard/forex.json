@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T22:09:28.113893+00:00",
+  "updated_at": "2026-10-03T01:09:20.021343+00:00",
   "source": "Yahoo Finance chart endpoint (public, unofficial)",
   "paper_only": true,
   "session_timezone": "America/New_York",
@@ -14,7 +14,7 @@
       "range": "5d",
       "interval": "5m",
       "session": "New York 08:00\u201317:00 local time",
-      "fetched_at": "2026-10-02T22:09:27.097583+00:00",
+      "fetched_at": "2026-10-03T01:09:18.409085+00:00",
       "paper_simulation": {
         "starting_balance": 10000.0,
         "ending_balance": 10048.401749571774,
@@ -2199,7 +2199,7 @@
       "range": "5d",
       "interval": "5m",
       "session": "New York 08:00\u201317:00 local time",
-      "fetched_at": "2026-10-02T22:09:27.230742+00:00",
+      "fetched_at": "2026-10-03T01:09:18.678447+00:00",
       "paper_simulation": {
         "starting_balance": 10000.0,
         "ending_balance": 10003.575038055913,
@@ -4384,7 +4384,7 @@
       "range": "5d",
       "interval": "5m",
       "session": "New York 08:00\u201317:00 local time",
-      "fetched_at": "2026-10-02T22:09:27.370473+00:00",
+      "fetched_at": "2026-10-03T01:09:18.936258+00:00",
       "paper_simulation": {
         "starting_balance": 10000.0,
         "ending_balance": 10018.990727185886,
@@ -6569,7 +6569,7 @@
       "range": "5d",
       "interval": "5m",
       "session": "New York 08:00\u201317:00 local time",
-      "fetched_at": "2026-10-02T22:09:27.514555+00:00",
+      "fetched_at": "2026-10-03T01:09:19.165714+00:00",
       "paper_simulation": {
         "starting_balance": 10000.0,
         "ending_balance": 9953.377970366513,
@@ -8754,7 +8754,7 @@
       "range": "5d",
       "interval": "5m",
       "session": "New York 08:00\u201317:00 local time",
-      "fetched_at": "2026-10-02T22:09:27.702142+00:00",
+      "fetched_at": "2026-10-03T01:09:19.485207+00:00",
       "paper_simulation": {
         "starting_balance": 10000.0,
         "ending_balance": 9970.696418090081,
@@ -10934,12 +10934,12 @@
       "symbol": "CHF=X",
       "currency": "CHF",
       "latest_close": 0.8284800052642822,
-      "latest_timestamp": 1790974799,
+      "latest_timestamp": 1790974500,
       "signal": "SELL",
       "range": "5d",
       "interval": "5m",
       "session": "New York 08:00\u201317:00 local time",
-      "fetched_at": "2026-10-02T22:09:27.988646+00:00",
+      "fetched_at": "2026-10-03T01:09:19.770745+00:00",
       "paper_simulation": {
         "starting_balance": 10000.0,
         "ending_balance": 9978.30754589097,
@@ -10952,6 +10952,18 @@
         "max_drawdown_pct": 0.21692454109030224
       },
       "candles": [
+        {
+          "timestamp": 1790866800,
+          "open": 0.8307999968528748,
+          "high": 0.83160001039505,
+          "low": 0.8306400179862976,
+          "close": 0.8313000202178955,
+          "volume": 0.0,
+          "ema_fast": 0.8324406195605929,
+          "ema_slow": 0.8338356022914997,
+          "rsi": 37.172293003992394,
+          "signal": "SELL"
+        },
         {
           "timestamp": 1790867100,
           "open": 0.8313000202178955,
@@ -13099,18 +13111,6 @@
           "ema_slow": 0.8287360609324745,
           "rsi": 43.45346316284215,
           "signal": "SELL"
-        },
-        {
-          "timestamp": 1790974799,
-          "open": 0.8284800052642822,
-          "high": 0.8284800052642822,
-          "low": 0.8284800052642822,
-          "close": 0.8284800052642822,
-          "volume": 0.0,
-          "ema_fast": 0.828643518971256,
-          "ema_slow": 0.8287260195337219,
-          "rsi": 43.45346316284215,
-          "signal": "SELL"
         }
       ]
     },
@@ -13124,7 +13124,7 @@
       "range": "5d",
       "interval": "5m",
       "session": "New York 08:00\u201317:00 local time",
-      "fetched_at": "2026-10-02T22:09:28.113792+00:00",
+      "fetched_at": "2026-10-03T01:09:20.021261+00:00",
       "paper_simulation": {
         "starting_balance": 10000.0,
         "ending_balance": 9954.226238891082,
