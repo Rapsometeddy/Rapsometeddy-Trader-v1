@@ -8,7 +8,7 @@
   "signal": "SELL",
   "range": "5d",
   "interval": "5m",
-  "fetched_at": "2026-10-06T00:31:35.335062+00:00",
+  "fetched_at": "2026-10-06T06:51:38.112012+00:00",
   "source": "Yahoo Finance chart endpoint (public, unofficial)",
   "paper_simulation": {
     "starting_balance": 10000.0,
@@ -3208,7 +3208,7 @@
       "high": 333.739990234375,
       "low": 333.489990234375,
       "close": 333.5350036621094,
-      "volume": 143081.0,
+      "volume": 102987.0,
       "ema_fast": 334.06751893392516,
       "ema_slow": 333.869724140471,
       "rsi": 42.64363108079001,
