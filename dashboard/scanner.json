@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T23:29:53.415352+00:00",
+  "updated_at": "2026-10-10T02:41:30.089583+00:00",
   "timeframe": "15m",
   "paper_only": true,
   "session": "New York analysis window 08:00\u201317:00 local time; scanner is informational.",
@@ -110,19 +110,19 @@
       "rsi": 63.12,
       "atr": 0.77996,
       "macd": 0.202369,
-      "vwap": 334.795567,
+      "vwap": 335.900568,
       "reason": "RSI momentum up, MACD positive, above VWAP",
       "candles": 131
     },
     "MSFT": {
       "price": 535.070007,
       "signal": "NEUTRAL",
-      "score": 0,
+      "score": 2,
       "rsi": 49.1,
       "atr": 0.872053,
       "macd": 1.52595,
-      "vwap": 535.54101,
-      "reason": "EMA trend up, MACD negative, below VWAP",
+      "vwap": 535.012166,
+      "reason": "EMA trend up, MACD negative, above VWAP",
       "candles": 131
     },
     "NVDA": {
@@ -132,7 +132,7 @@
       "rsi": 47.51,
       "atr": 0.390543,
       "macd": -0.48672,
-      "vwap": 229.757831,
+      "vwap": 229.661785,
       "reason": "EMA trend down, MACD positive, below VWAP",
       "candles": 131
     },
@@ -143,7 +143,7 @@
       "rsi": 42.72,
       "atr": 0.954448,
       "macd": 1.009659,
-      "vwap": 383.171881,
+      "vwap": 383.08085,
       "reason": "EMA trend up, RSI momentum down, MACD negative, below VWAP",
       "candles": 131
     },
@@ -154,7 +154,7 @@
       "rsi": 62.47,
       "atr": 0.52432,
       "macd": 0.965477,
-      "vwap": 261.368379,
+      "vwap": 261.368382,
       "reason": "EMA trend up, RSI momentum up, MACD positive, above VWAP",
       "candles": 131
     },
@@ -165,7 +165,7 @@
       "rsi": 28.88,
       "atr": 2.431035,
       "macd": -0.754313,
-      "vwap": 720.454598,
+      "vwap": 721.094392,
       "reason": "EMA trend down, RSI momentum down, MACD negative, below VWAP",
       "candles": 131
     }
