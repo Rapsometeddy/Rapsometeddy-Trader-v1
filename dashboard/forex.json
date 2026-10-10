@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T21:49:09.730039+00:00",
+  "updated_at": "2026-10-10T01:21:45.454034+00:00",
   "source": "Yahoo Finance chart endpoint (public, unofficial)",
   "paper_only": true,
   "session_timezone": "America/New_York",
@@ -14,7 +14,7 @@
       "range": "5d",
       "interval": "5m",
       "session": "New York 08:00\u201317:00 local time",
-      "fetched_at": "2026-10-09T21:49:08.401186+00:00",
+      "fetched_at": "2026-10-10T01:21:44.376282+00:00",
       "paper_simulation": {
         "starting_balance": 10000.0,
         "ending_balance": 9997.198447224473,
@@ -2199,7 +2199,7 @@
       "range": "5d",
       "interval": "5m",
       "session": "New York 08:00\u201317:00 local time",
-      "fetched_at": "2026-10-09T21:49:08.664624+00:00",
+      "fetched_at": "2026-10-10T01:21:44.495142+00:00",
       "paper_simulation": {
         "starting_balance": 10000.0,
         "ending_balance": 9991.000672840144,
@@ -4379,12 +4379,12 @@
       "symbol": "JPY=X",
       "currency": "JPY",
       "latest_close": 158.24600219726562,
-      "latest_timestamp": 1791579596,
+      "latest_timestamp": 1791579300,
       "signal": "SELL",
       "range": "5d",
       "interval": "5m",
       "session": "New York 08:00\u201317:00 local time",
-      "fetched_at": "2026-10-09T21:49:08.875264+00:00",
+      "fetched_at": "2026-10-10T01:21:44.699298+00:00",
       "paper_simulation": {
         "starting_balance": 10000.0,
         "ending_balance": 9999.589265442703,
@@ -4397,6 +4397,18 @@
         "max_drawdown_pct": 0.004107345572974736
       },
       "candles": [
+        {
+          "timestamp": 1791471600,
+          "open": 158.1999969482422,
+          "high": 158.24600219726562,
+          "low": 158.19500732421875,
+          "close": 158.21299743652344,
+          "volume": 0.0,
+          "ema_fast": 158.15020081261517,
+          "ema_slow": 158.1344823749823,
+          "rsi": 60.92116898524265,
+          "signal": "BUY"
+        },
         {
           "timestamp": 1791471900,
           "open": 158.21200561523438,
@@ -6544,18 +6556,6 @@
           "ema_slow": 158.2566013806567,
           "rsi": 47.492599279301906,
           "signal": "SELL"
-        },
-        {
-          "timestamp": 1791579596,
-          "open": 158.24600219726562,
-          "high": 158.24600219726562,
-          "low": 158.24600219726562,
-          "close": 158.24600219726562,
-          "volume": 0.0,
-          "ema_fast": 158.2533257179097,
-          "ema_slow": 158.25618572640607,
-          "rsi": 47.49259927930191,
-          "signal": "SELL"
         }
       ]
     },
@@ -6569,7 +6569,7 @@
       "range": "5d",
       "interval": "5m",
       "session": "New York 08:00\u201317:00 local time",
-      "fetched_at": "2026-10-09T21:49:09.031343+00:00",
+      "fetched_at": "2026-10-10T01:21:44.877294+00:00",
       "paper_simulation": {
         "starting_balance": 10000.0,
         "ending_balance": 9980.787908167023,
@@ -8754,7 +8754,7 @@
       "range": "5d",
       "interval": "5m",
       "session": "New York 08:00\u201317:00 local time",
-      "fetched_at": "2026-10-09T21:49:09.266318+00:00",
+      "fetched_at": "2026-10-10T01:21:45.061615+00:00",
       "paper_simulation": {
         "starting_balance": 10000.0,
         "ending_balance": 10000.280593798367,
@@ -10934,12 +10934,12 @@
       "symbol": "CHF=X",
       "currency": "CHF",
       "latest_close": 0.8299999833106995,
-      "latest_timestamp": 1791579598,
+      "latest_timestamp": 1791579300,
       "signal": "HOLD",
       "range": "5d",
       "interval": "5m",
       "session": "New York 08:00\u201317:00 local time",
-      "fetched_at": "2026-10-09T21:49:09.526982+00:00",
+      "fetched_at": "2026-10-10T01:21:45.319051+00:00",
       "paper_simulation": {
         "starting_balance": 10000.0,
         "ending_balance": 10007.098301126305,
@@ -10952,6 +10952,18 @@
         "max_drawdown_pct": 0.0
       },
       "candles": [
+        {
+          "timestamp": 1791471600,
+          "open": 0.8329100012779236,
+          "high": 0.8330000042915344,
+          "low": 0.8325700163841248,
+          "close": 0.8325999975204468,
+          "volume": 0.0,
+          "ema_fast": 0.8330610034402695,
+          "ema_slow": 0.833246885374189,
+          "rsi": 39.418301588680336,
+          "signal": "SELL"
+        },
         {
           "timestamp": 1791471900,
           "open": 0.8325999975204468,
@@ -13099,18 +13111,6 @@
           "ema_slow": 0.8300803397530738,
           "rsi": 52.4303461103871,
           "signal": "HOLD"
-        },
-        {
-          "timestamp": 1791579598,
-          "open": 0.8299999833106995,
-          "high": 0.8299999833106995,
-          "low": 0.8299999833106995,
-          "close": 0.8299999833106995,
-          "volume": 0.0,
-          "ema_fast": 0.8299596146564286,
-          "ema_slow": 0.8300771885200395,
-          "rsi": 52.4303461103871,
-          "signal": "HOLD"
         }
       ]
     },
@@ -13124,7 +13124,7 @@
       "range": "5d",
       "interval": "5m",
       "session": "New York 08:00\u201317:00 local time",
-      "fetched_at": "2026-10-09T21:49:09.729977+00:00",
+      "fetched_at": "2026-10-10T01:21:45.453888+00:00",
       "paper_simulation": {
         "starting_balance": 10000.0,
         "ending_balance": 9975.863250372937,
