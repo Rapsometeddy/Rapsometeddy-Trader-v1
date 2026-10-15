@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T05:09:09.838597+00:00",
+  "updated_at": "2026-10-15T09:50:37.645970+00:00",
   "source": "Yahoo Finance chart endpoint (public, unofficial)",
   "paper_only": true,
   "session_timezone": "America/New_York",
@@ -14,7 +14,7 @@
       "range": "5d",
       "interval": "5m",
       "session": "New York 08:00\u201317:00 local time",
-      "fetched_at": "2026-10-15T05:09:08.841552+00:00",
+      "fetched_at": "2026-10-15T09:50:36.777302+00:00",
       "paper_simulation": {
         "starting_balance": 10000.0,
         "ending_balance": 10018.971160154499,
@@ -2199,7 +2199,7 @@
       "range": "5d",
       "interval": "5m",
       "session": "New York 08:00\u201317:00 local time",
-      "fetched_at": "2026-10-15T05:09:08.990099+00:00",
+      "fetched_at": "2026-10-15T09:50:36.912996+00:00",
       "paper_simulation": {
         "starting_balance": 10000.0,
         "ending_balance": 10008.840323926352,
@@ -4384,7 +4384,7 @@
       "range": "5d",
       "interval": "5m",
       "session": "New York 08:00\u201317:00 local time",
-      "fetched_at": "2026-10-15T05:09:09.226857+00:00",
+      "fetched_at": "2026-10-15T09:50:37.037408+00:00",
       "paper_simulation": {
         "starting_balance": 10000.0,
         "ending_balance": 10000.663714830705,
@@ -6569,7 +6569,7 @@
       "range": "5d",
       "interval": "5m",
       "session": "New York 08:00\u201317:00 local time",
-      "fetched_at": "2026-10-15T05:09:09.374951+00:00",
+      "fetched_at": "2026-10-15T09:50:37.150908+00:00",
       "paper_simulation": {
         "starting_balance": 10000.0,
         "ending_balance": 10001.394763889755,
@@ -8754,7 +8754,7 @@
       "range": "5d",
       "interval": "5m",
       "session": "New York 08:00\u201317:00 local time",
-      "fetched_at": "2026-10-15T05:09:09.534731+00:00",
+      "fetched_at": "2026-10-15T09:50:37.316948+00:00",
       "paper_simulation": {
         "starting_balance": 10000.0,
         "ending_balance": 9985.325030042604,
@@ -10939,7 +10939,7 @@
       "range": "5d",
       "interval": "5m",
       "session": "New York 08:00\u201317:00 local time",
-      "fetched_at": "2026-10-15T05:09:09.672966+00:00",
+      "fetched_at": "2026-10-15T09:50:37.467483+00:00",
       "paper_simulation": {
         "starting_balance": 10000.0,
         "ending_balance": 10019.42024807602,
@@ -13124,7 +13124,7 @@
       "range": "5d",
       "interval": "5m",
       "session": "New York 08:00\u201317:00 local time",
-      "fetched_at": "2026-10-15T05:09:09.838497+00:00",
+      "fetched_at": "2026-10-15T09:50:37.645867+00:00",
       "paper_simulation": {
         "starting_balance": 10000.0,
         "ending_balance": 10011.748030391285,
