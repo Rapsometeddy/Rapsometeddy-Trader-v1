@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T05:40:30.261779+00:00",
+  "updated_at": "2026-10-18T09:57:26.164041+00:00",
   "paper_only": true,
   "presets": {
     "Balanced": {
@@ -361,7 +361,7 @@
           "last_signal": "SELL",
           "open_position": {
             "side": "SELL",
-            "entry": 0.6920415163040161
+            "entry": 0.6919936537742615
           }
         },
         "Fast Day Trade": {
@@ -375,7 +375,7 @@
           "last_signal": "SELL",
           "open_position": {
             "side": "SELL",
-            "entry": 0.6920415163040161
+            "entry": 0.6919936537742615
           }
         },
         "Trend Study": {
@@ -389,7 +389,7 @@
           "last_signal": "SELL",
           "open_position": {
             "side": "SELL",
-            "entry": 0.6920415163040161
+            "entry": 0.6919936537742615
           }
         },
         "Conservative": {
@@ -403,7 +403,7 @@
           "last_signal": "SELL",
           "open_position": {
             "side": "SELL",
-            "entry": 0.6920415163040161
+            "entry": 0.6919936537742615
           }
         }
       }
@@ -423,7 +423,7 @@
           "last_signal": "BUY",
           "open_position": {
             "side": "BUY",
-            "entry": 0.5625246167182922
+            "entry": 0.5623664259910583
           }
         },
         "Fast Day Trade": {
@@ -437,7 +437,7 @@
           "last_signal": "BUY",
           "open_position": {
             "side": "BUY",
-            "entry": 0.5625246167182922
+            "entry": 0.5623664259910583
           }
         },
         "Trend Study": {
@@ -451,7 +451,7 @@
           "last_signal": "BUY",
           "open_position": {
             "side": "BUY",
-            "entry": 0.5625246167182922
+            "entry": 0.5623664259910583
           }
         },
         "Conservative": {
@@ -465,7 +465,7 @@
           "last_signal": "BUY",
           "open_position": {
             "side": "BUY",
-            "entry": 0.5625246167182922
+            "entry": 0.5623664259910583
           }
         }
       }
