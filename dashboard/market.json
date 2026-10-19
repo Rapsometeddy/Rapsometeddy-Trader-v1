@@ -8,7 +8,7 @@
   "signal": "BUY",
   "range": "5d",
   "interval": "5m",
-  "fetched_at": "2026-10-19T20:32:39.855439+00:00",
+  "fetched_at": "2026-10-19T23:56:01.867324+00:00",
   "source": "Yahoo Finance chart endpoint (public, unofficial)",
   "paper_simulation": {
     "starting_balance": 10000.0,
