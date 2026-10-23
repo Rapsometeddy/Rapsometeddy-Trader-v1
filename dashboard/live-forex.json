@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T23:22:09.923868+00:00",
+  "updated_at": "2026-10-23T00:58:49.465882+00:00",
   "paper_only": true,
   "presets": {
     "Balanced": {
@@ -37,8 +37,8 @@
   },
   "markets": {
     "EUR/USD": {
-      "price": 1.1223344802856445,
-      "timestamp": 1792711289,
+      "price": 1.1224603652954102,
+      "timestamp": 1792717106,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -99,8 +99,8 @@
       }
     },
     "GBP/USD": {
-      "price": 1.3402849435806274,
-      "timestamp": 1792711289,
+      "price": 1.3404287099838257,
+      "timestamp": 1792717106,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -161,8 +161,8 @@
       }
     },
     "USD/JPY": {
-      "price": 156.57000732421875,
-      "timestamp": 1792711329,
+      "price": 156.43699645996094,
+      "timestamp": 1792717129,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -223,8 +223,8 @@
       }
     },
     "USD/CAD": {
-      "price": 1.40024995803833,
-      "timestamp": 1792711324,
+      "price": 1.400230050086975,
+      "timestamp": 1792717128,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -262,8 +262,11 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "HOLD",
-          "open_position": null
+          "last_signal": "SELL",
+          "open_position": {
+            "side": "SELL",
+            "entry": 1.4002000093460083
+          }
         },
         "Conservative": {
           "starting_balance": 10000.0,
@@ -273,14 +276,17 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "HOLD",
-          "open_position": null
+          "last_signal": "SELL",
+          "open_position": {
+            "side": "SELL",
+            "entry": 1.4002000093460083
+          }
         }
       }
     },
     "USD/CHF": {
-      "price": 0.8199399709701538,
-      "timestamp": 1792711328,
+      "price": 0.8201000094413757,
+      "timestamp": 1792717129,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -341,8 +347,8 @@
       }
     },
     "AUD/USD": {
-      "price": 0.7019021511077881,
-      "timestamp": 1792711289,
+      "price": 0.7021978497505188,
+      "timestamp": 1792717046,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -352,8 +358,11 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "HOLD",
-          "open_position": null
+          "last_signal": "SELL",
+          "open_position": {
+            "side": "SELL",
+            "entry": 0.7019021511077881
+          }
         },
         "Fast Day Trade": {
           "starting_balance": 10000.0,
@@ -363,8 +372,11 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "HOLD",
-          "open_position": null
+          "last_signal": "SELL",
+          "open_position": {
+            "side": "SELL",
+            "entry": 0.7019021511077881
+          }
         },
         "Trend Study": {
           "starting_balance": 10000.0,
@@ -374,8 +386,11 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "HOLD",
-          "open_position": null
+          "last_signal": "SELL",
+          "open_position": {
+            "side": "SELL",
+            "entry": 0.7019021511077881
+          }
         },
         "Conservative": {
           "starting_balance": 10000.0,
@@ -385,14 +400,17 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "HOLD",
-          "open_position": null
+          "last_signal": "SELL",
+          "open_position": {
+            "side": "SELL",
+            "entry": 0.7019021511077881
+          }
         }
       }
     },
     "NZD/USD": {
-      "price": 0.5685048699378967,
-      "timestamp": 1792711289,
+      "price": 0.5691519975662231,
+      "timestamp": 1792717046,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -402,8 +420,11 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "HOLD",
-          "open_position": null
+          "last_signal": "SELL",
+          "open_position": {
+            "side": "SELL",
+            "entry": 0.5685048699378967
+          }
         },
         "Fast Day Trade": {
           "starting_balance": 10000.0,
@@ -413,8 +434,11 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "HOLD",
-          "open_position": null
+          "last_signal": "SELL",
+          "open_position": {
+            "side": "SELL",
+            "entry": 0.5685048699378967
+          }
         },
         "Trend Study": {
           "starting_balance": 10000.0,
@@ -424,8 +448,11 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "HOLD",
-          "open_position": null
+          "last_signal": "SELL",
+          "open_position": {
+            "side": "SELL",
+            "entry": 0.5685048699378967
+          }
         },
         "Conservative": {
           "starting_balance": 10000.0,
@@ -435,14 +462,17 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "HOLD",
-          "open_position": null
+          "last_signal": "SELL",
+          "open_position": {
+            "side": "SELL",
+            "entry": 0.5685048699378967
+          }
         }
       }
     },
     "EUR/JPY": {
-      "price": 175.6959991455078,
-      "timestamp": 1792711330,
+      "price": 175.52000427246094,
+      "timestamp": 1792717129,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -503,8 +533,8 @@
       }
     },
     "GBP/JPY": {
-      "price": 209.85000610351562,
-      "timestamp": 1792711330,
+      "price": 209.66000366210938,
+      "timestamp": 1792717129,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
