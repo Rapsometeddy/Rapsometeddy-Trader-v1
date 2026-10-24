@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T01:56:00.738398+00:00",
+  "updated_at": "2026-10-24T07:09:42.703669+00:00",
   "paper_only": true,
   "presets": {
     "Balanced": {
@@ -113,7 +113,7 @@
           "last_signal": "BUY",
           "open_position": {
             "side": "BUY",
-            "entry": 1.340356707572937
+            "entry": 1.3404107093811035
           }
         },
         "Fast Day Trade": {
@@ -124,10 +124,10 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "SELL",
+          "last_signal": "BUY",
           "open_position": {
-            "side": "SELL",
-            "entry": 1.3403029441833496
+            "side": "BUY",
+            "entry": 1.3404107093811035
           }
         },
         "Trend Study": {
@@ -138,10 +138,10 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "SELL",
+          "last_signal": "BUY",
           "open_position": {
-            "side": "SELL",
-            "entry": 1.3402130603790283
+            "side": "BUY",
+            "entry": 1.3404107093811035
           }
         },
         "Conservative": {
@@ -152,10 +152,10 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "SELL",
+          "last_signal": "BUY",
           "open_position": {
-            "side": "SELL",
-            "entry": 1.3402670621871948
+            "side": "BUY",
+            "entry": 1.3404107093811035
           }
         }
       }
