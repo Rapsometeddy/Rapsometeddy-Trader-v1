@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T08:52:35.715864+00:00",
+  "updated_at": "2026-10-31T15:14:19.687510+00:00",
   "paper_only": true,
   "presets": {
     "Balanced": {
@@ -472,7 +472,7 @@
     },
     "EUR/JPY": {
       "price": 175.8159942626953,
-      "timestamp": 1793395680,
+      "timestamp": 1793395740,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
