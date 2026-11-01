@@ -37,6 +37,26 @@
 <article class="tool-card"><h3>📤 Journal Export</h3><p class="muted">Export your device-local paper journal as CSV.</p><button class="tool-btn" id="exportJournal">Export CSV</button></article>
 <article class="tool-card"><h3>⚙️ Dashboard Preferences</h3><label class="pref-row"><input id="compactMode" type="checkbox"> Compact mode</label><label class="pref-row">Refresh <select id="refreshRate"><option value="60">60 seconds</option><option value="300">5 minutes</option></select></label><button class="tool-btn" id="savePrefs">Save preferences</button><p class="muted" id="prefStatus">Device-local settings.</p></article>
 </div></section><section class="panel strategy-lab"><div class="panel-head"><h2>🧪 Strategy Lab</h2><span>Paper simulation</span></div><div class="strategy-grid"><article class="tool-card"><h3>⚙️ Strategy parameters</h3><input id="labName" placeholder="Strategy name"><div class="param-grid"><label>Fast EMA<input id="labFast" type="number" min="2"></label><label>Slow EMA<input id="labSlow" type="number" min="3"></label><label>RSI BUY<input id="labRsiBuy" type="number"></label><label>RSI SELL<input id="labRsiSell" type="number"></label><label>Stop %<input id="labStop" type="number" step=".1"></label><label>Target %<input id="labTarget" type="number" step=".1"></label></div><div class="lab-actions"><button class="tool-btn" id="labRun">Run simulation</button><button class="tool-btn" id="labSave">Save</button><button class="tool-btn" id="labReset">Reset</button></div></article><article class="tool-card"><h3>📊 Simulation results</h3><div class="tool-results"><div>Balance<b id="labBalance">—</b></div><div>P/L<b id="labPnl">—</b></div><div>Trades<b id="labTrades">—</b></div></div><div class="tool-results"><div>Win rate<b id="labWinRate">—</b></div><div>Max DD<b id="labDrawdown">—</b></div></div><p class="muted" id="labStatus">Loading…</p></article></div></section><section class="panel auto-intel"><div class="panel-head"><h2>🧠 Market Intelligence Center</h2><span id="intelHealth">Starting…</span></div><div class="intel-grid"><article class="tool-card"><h3>📡 Feed Health</h3><div id="intelFeeds">Checking markets…</div></article><article class="tool-card"><h3>🕐 Session</h3><b id="intelSession">—</b><p id="intelSessionClock" class="muted">—</p></article><article class="tool-card"><h3>🌡️ Market Regime</h3><b id="intelRegime">—</b><p id="intelRegimeNote" class="muted">Calculated from recent AAPL movement.</p></article><article class="tool-card"><h3>🎯 Setup Monitor</h3><b id="intelSetup">—</b><p id="intelSetupNote" class="muted">EMA/RSI conditions.</p></article></div><div class="tool-card"><h3>⭐ Auto Watchlist</h3><div class="intel-table-wrap"><table><thead><tr><th>Market</th><th>Price</th><th>Change</th><th>State</th></tr></thead><tbody id="intelRows"><tr><td colspan="4">Loading…</td></tr></tbody></table></div></div></section><section class="panel note"><strong>Paper only.</strong> AAPL market data is read-only. Signals and results are simulated; no broker, exchange, bank, or real-money orders are connected. Market data refreshes automatically from the public feed; GitHub snapshots are used as a fallback.</section>
+<section class="panel gold-lab" id="goldLab">
+<div class="panel-head"><h2>👑 Gold Lab • XAU/USD</h2><span id="goldUpdated">Waiting for snapshot…</span></div>
+<p class="muted">NEWS-BLIND • PAPER-ONLY • 1-MINUTE ANALYSIS. Technical price data only. No news, calendar, sentiment, broker connection or live orders.</p>
+<div class="market-main">
+ <div><span>Latest gold proxy price</span><strong id="goldPrice">—</strong><small>USD • GC=F futures proxy</small></div>
+ <div><span>Technical signal</span><strong id="goldSignal">WAIT</strong><small id="goldSignalNote">Waiting for valid candles</small></div>
+</div>
+<div class="grid">
+ <article class="card"><span>Paper balance</span><strong id="goldBalance">—</strong></article>
+ <article class="card"><span>Simulated P/L</span><strong id="goldPnl">—</strong></article>
+ <article class="card"><span>Win rate</span><strong id="goldWinRate">—</strong></article>
+ <article class="card"><span>Max drawdown</span><strong id="goldDrawdown">—</strong></article>
+</div>
+<div class="panel-head"><h2>Gold price • EMA 20 / 50</h2><span id="goldCandleCount">—</span></div>
+<div class="chart large"><canvas id="goldChart" aria-label="Gold one-minute candlestick and EMA chart"></canvas></div>
+<div class="stats"><div><span>Risk / trade</span><b>0.5%</b></div><div><span>Stop</span><b>1 × ATR(14)</b></div><div><span>Target</span><b>2 × ATR(14)</b></div></div>
+<div class="panel-head"><h2>Simulated trade history</h2><span id="goldTrades">0 trades</span></div>
+<div class="table-wrap"><table><thead><tr><th>Side</th><th>Entry</th><th>Exit</th><th>P/L (USD proxy)</th><th>Exit</th></tr></thead><tbody id="goldTradeRows"><tr><td colspan="5">Waiting for historical candles…</td></tr></tbody></table></div>
+<p class="muted note" id="goldFeedStatus">Free public feed may be delayed, unavailable, or rate-limited. GC=F is a gold-futures proxy and may differ from broker XAU/USD prices.</p>
+</section>
 </main>
 <script>
 const money=n=>"R"+Number(n).toLocaleString("en-ZA",{minimumFractionDigits:2,maximumFractionDigits:2});
@@ -189,4 +209,5 @@ async function updateLive(){
 }
 window.addEventListener("load",()=>{updateLive();timer=setInterval(updateLive,30000)});
 })();
-</script></body></html>
+</script><script src="gold-lab.js"></script>
+</body></html>
