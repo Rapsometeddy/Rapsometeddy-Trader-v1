@@ -2,20 +2,35 @@
 import json, math, os, urllib.request
 from datetime import datetime, timezone
 
-URL = "https://query1.finance.yahoo.com/v8/finance/chart/GC=F?range=1d&interval=1m"
+# Yahoo's 1-minute endpoint only retains a short history. A 5-day window
+# includes the most recent completed session when futures are closed (e.g. Sunday).
+URL = "https://query1.finance.yahoo.com/v8/finance/chart/GC=F?range=5d&interval=1m"
 REQ = urllib.request.Request(URL, headers={"User-Agent": "Mozilla/5.0 RapsometeddyTrader/1.0"})
-with urllib.request.urlopen(REQ, timeout=20) as response:
+with urllib.request.urlopen(REQ, timeout=30) as response:
     raw = json.load(response)
-result = raw["chart"]["result"][0]
-quote = result["indicators"]["quote"][0]
-timestamps = result.get("timestamp", [])
+
+chart = raw.get("chart", {})
+if chart.get("error"):
+    raise RuntimeError(f"Yahoo Finance chart error: {chart['error']}")
+results = chart.get("result") or []
+if not results:
+    raise RuntimeError("Yahoo Finance returned no GC=F chart data for the 5-day 1-minute window")
+result = results[0]
+quote = result.get("indicators", {}).get("quote", [{}])[0]
+timestamps = result.get("timestamp") or []
 candles = []
 for i, ts in enumerate(timestamps):
-    vals = [quote[k][i] if quote.get(k) else None for k in ("open","high","low","close","volume")]
+    vals = [quote.get(k, [None] * len(timestamps))[i] for k in ("open","high","low","close","volume")]
     if all(v is not None and math.isfinite(v) for v in vals[:4]):
         candles.append({"timestamp": ts, "open": vals[0], "high": vals[1], "low": vals[2], "close": vals[3], "volume": vals[4] or 0})
 if len(candles) < 60:
-    raise RuntimeError(f"Not enough valid 1-minute candles: {len(candles)}")
+    meta = result.get("meta", {})
+    raise RuntimeError(
+        f"Not enough valid GC=F 1-minute candles in 5-day window: {len(candles)}; "
+        f"provider={meta.get('fullExchangeName', 'unknown')}, "
+        f"currency={meta.get('currency', 'unknown')}. "
+        "The feed may be closed or Yahoo may not have supplied intraday history."
+    )
 
 closes = [c["close"] for c in candles]
 def ema(values, period):
