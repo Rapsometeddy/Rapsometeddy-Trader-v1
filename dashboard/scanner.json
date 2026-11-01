@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T01:32:20.206699+00:00",
+  "updated_at": "2026-11-01T08:09:08.012914+00:00",
   "timeframe": "15m",
   "paper_only": true,
   "session": "New York analysis window 08:00\u201317:00 local time; scanner is informational.",
@@ -41,56 +41,56 @@
       "price": 1.3973,
       "signal": "BUY SETUP",
       "score": 4,
-      "rsi": 67.62,
-      "atr": 0.000808,
-      "macd": 0.000392,
+      "rsi": 68.0,
+      "atr": 0.000865,
+      "macd": 0.00037,
       "vwap": null,
       "reason": "EMA trend up, RSI momentum up, MACD positive",
-      "candles": 472
+      "candles": 471
     },
     "USD/CHF": {
       "price": 0.8249,
       "signal": "BUY SETUP",
       "score": 4,
-      "rsi": 73.57,
-      "atr": 0.000459,
-      "macd": 0.000384,
+      "rsi": 61.62,
+      "atr": 0.000501,
+      "macd": 0.000372,
       "vwap": null,
       "reason": "EMA trend up, RSI momentum up, MACD positive",
-      "candles": 471
+      "candles": 470
     },
     "AUD/USD": {
       "price": 0.703532,
       "signal": "BUY SETUP",
-      "score": 3,
-      "rsi": 54.84,
-      "atr": 0.000152,
-      "macd": 4.9e-05,
+      "score": 4,
+      "rsi": 56.25,
+      "atr": 0.00017,
+      "macd": 5e-05,
       "vwap": null,
-      "reason": "EMA trend up, MACD positive",
-      "candles": 475
+      "reason": "EMA trend up, RSI momentum up, MACD positive",
+      "candles": 474
     },
     "NZD/USD": {
       "price": 0.563253,
       "signal": "NEUTRAL",
       "score": -2,
       "rsi": 37.83,
-      "atr": 0.000141,
-      "macd": -0.000115,
+      "atr": 0.000152,
+      "macd": -0.00012,
       "vwap": null,
       "reason": "EMA trend down, RSI momentum down, MACD positive",
-      "candles": 475
+      "candles": 474
     },
     "EUR/JPY": {
-      "price": 175.649994,
+      "price": 175.815994,
       "signal": "NEUTRAL",
-      "score": -1,
-      "rsi": 50.09,
-      "atr": 0.119144,
-      "macd": 0.021339,
+      "score": 2,
+      "rsi": 61.73,
+      "atr": 0.114073,
+      "macd": 0.0379,
       "vwap": null,
-      "reason": "MACD negative",
-      "candles": 471
+      "reason": "RSI momentum up, MACD positive",
+      "candles": 470
     },
     "GBP/JPY": {
       "price": 211.005005,
