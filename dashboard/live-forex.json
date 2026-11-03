@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T17:43:28.901664+00:00",
+  "updated_at": "2026-11-03T18:28:26.601909+00:00",
   "paper_only": true,
   "presets": {
     "Balanced": {
@@ -37,8 +37,8 @@
   },
   "markets": {
     "EUR/USD": {
-      "price": 1.1199462413787842,
-      "timestamp": 1793727748,
+      "price": 1.1200717687606812,
+      "timestamp": 1793730449,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -99,8 +99,8 @@
       }
     },
     "GBP/USD": {
-      "price": 1.3419756889343262,
-      "timestamp": 1793727748,
+      "price": 1.3426783084869385,
+      "timestamp": 1793730449,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -161,8 +161,8 @@
       }
     },
     "USD/JPY": {
-      "price": 158.47500610351562,
-      "timestamp": 1793727808,
+      "price": 158.531005859375,
+      "timestamp": 1793730506,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -223,8 +223,8 @@
       }
     },
     "USD/CAD": {
-      "price": 1.3994499444961548,
-      "timestamp": 1793727807,
+      "price": 1.3991899490356445,
+      "timestamp": 1793730506,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -285,8 +285,8 @@
       }
     },
     "USD/CHF": {
-      "price": 0.8204799890518188,
-      "timestamp": 1793727807,
+      "price": 0.8202800154685974,
+      "timestamp": 1793730506,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -347,8 +347,8 @@
       }
     },
     "AUD/USD": {
-      "price": 0.69730144739151,
-      "timestamp": 1793727808,
+      "price": 0.6976906061172485,
+      "timestamp": 1793730449,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -409,8 +409,8 @@
       }
     },
     "NZD/USD": {
-      "price": 0.5616399645805359,
-      "timestamp": 1793727808,
+      "price": 0.562208354473114,
+      "timestamp": 1793730449,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -471,8 +471,8 @@
       }
     },
     "EUR/JPY": {
-      "price": 177.447998046875,
-      "timestamp": 1793727809,
+      "price": 177.50900268554688,
+      "timestamp": 1793730507,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -533,8 +533,8 @@
       }
     },
     "GBP/JPY": {
-      "price": 212.66400146484375,
-      "timestamp": 1793727810,
+      "price": 212.83999633789062,
+      "timestamp": 1793730507,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
