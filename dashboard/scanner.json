@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T00:22:31.282646+00:00",
+  "updated_at": "2026-11-07T06:28:42.727100+00:00",
   "timeframe": "15m",
   "paper_only": true,
   "session": "New York analysis window 08:00\u201317:00 local time; scanner is informational.",
@@ -110,7 +110,7 @@
       "rsi": 31.65,
       "atr": 0.816759,
       "macd": -0.489703,
-      "vwap": 344.187476,
+      "vwap": 343.864754,
       "reason": "EMA trend down, RSI momentum down, MACD negative, below VWAP",
       "candles": 131
     },
@@ -121,7 +121,7 @@
       "rsi": 19.67,
       "atr": 1.36632,
       "macd": -1.493606,
-      "vwap": 532.751223,
+      "vwap": 533.496892,
       "reason": "EMA trend down, RSI momentum down, MACD negative, below VWAP",
       "candles": 131
     },
@@ -132,7 +132,7 @@
       "rsi": 52.97,
       "atr": 0.911714,
       "macd": -0.178066,
-      "vwap": 187.622943,
+      "vwap": 187.405443,
       "reason": "EMA trend down, MACD negative, below VWAP",
       "candles": 131
     },
@@ -143,7 +143,7 @@
       "rsi": 49.49,
       "atr": 1.713904,
       "macd": 1.130177,
-      "vwap": 360.893308,
+      "vwap": 360.665404,
       "reason": "MACD negative, below VWAP",
       "candles": 131
     },
@@ -154,7 +154,7 @@
       "rsi": 29.41,
       "atr": 0.892944,
       "macd": -0.505046,
-      "vwap": 261.859576,
+      "vwap": 261.535193,
       "reason": "EMA trend down, RSI momentum down, MACD negative, below VWAP",
       "candles": 131
     },
@@ -165,7 +165,7 @@
       "rsi": 14.25,
       "atr": 1.844365,
       "macd": -0.59898,
-      "vwap": 618.411014,
+      "vwap": 616.683421,
       "reason": "EMA trend down, RSI momentum down, MACD negative, below VWAP",
       "candles": 131
     }
