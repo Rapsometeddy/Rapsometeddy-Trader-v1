@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T01:25:08.567833+00:00",
+  "updated_at": "2026-11-08T07:52:36.858211+00:00",
   "timeframe": "15m",
   "paper_only": true,
   "session": "New York analysis window 08:00\u201317:00 local time; scanner is informational.",
@@ -30,23 +30,23 @@
       "price": 158.425003,
       "signal": "NEUTRAL",
       "score": 2,
-      "rsi": 59.64,
-      "atr": 0.054357,
-      "macd": 0.045214,
+      "rsi": 62.93,
+      "atr": 0.059857,
+      "macd": 0.051086,
       "vwap": null,
       "reason": "EMA trend up, RSI momentum up, MACD negative",
-      "candles": 474
+      "candles": 473
     },
     "USD/CAD": {
       "price": 1.4128,
       "signal": "NEUTRAL",
       "score": 1,
-      "rsi": 49.38,
-      "atr": 0.000792,
-      "macd": 0.00068,
+      "rsi": 52.62,
+      "atr": 0.000846,
+      "macd": 0.000718,
       "vwap": null,
       "reason": "EMA trend up, MACD negative",
-      "candles": 474
+      "candles": 473
     },
     "USD/CHF": {
       "price": 0.82001,
@@ -63,45 +63,45 @@
       "price": 0.686813,
       "signal": "NEUTRAL",
       "score": -2,
-      "rsi": 40.0,
-      "atr": 0.000195,
-      "macd": -0.000161,
+      "rsi": 44.74,
+      "atr": 0.000212,
+      "macd": -0.000176,
       "vwap": null,
       "reason": "EMA trend down, RSI momentum down, MACD positive",
-      "candles": 475
+      "candles": 474
     },
     "NZD/USD": {
       "price": 0.554754,
       "signal": "NEUTRAL",
       "score": 2,
       "rsi": 61.24,
-      "atr": 0.000162,
-      "macd": -4e-06,
+      "atr": 0.000171,
+      "macd": -2.8e-05,
       "vwap": null,
       "reason": "RSI momentum up, MACD positive",
-      "candles": 475
+      "candles": 474
     },
     "EUR/JPY": {
-      "price": 176.339996,
-      "signal": "SELL SETUP",
-      "score": -4,
-      "rsi": 31.33,
-      "atr": 0.094861,
-      "macd": -0.008686,
+      "price": 176.585007,
+      "signal": "NEUTRAL",
+      "score": 2,
+      "rsi": 62.66,
+      "atr": 0.083145,
+      "macd": 0.009446,
       "vwap": null,
-      "reason": "EMA trend down, RSI momentum down, MACD negative",
-      "candles": 475
+      "reason": "RSI momentum up, MACD positive",
+      "candles": 474
     },
     "GBP/JPY": {
       "price": 211.546997,
       "signal": "NEUTRAL",
-      "score": -2,
-      "rsi": 43.78,
-      "atr": 0.083214,
-      "macd": -0.010475,
+      "score": 1,
+      "rsi": 54.37,
+      "atr": 0.093642,
+      "macd": -0.009198,
       "vwap": null,
-      "reason": "EMA trend down, RSI momentum down, MACD positive",
-      "candles": 475
+      "reason": "MACD positive",
+      "candles": 474
     },
     "AAPL": {
       "price": 342.369995,
@@ -109,7 +109,7 @@
       "score": -5,
       "rsi": 31.65,
       "atr": 0.816759,
-      "macd": -0.489703,
+      "macd": -0.48972,
       "vwap": 343.864754,
       "reason": "EMA trend down, RSI momentum down, MACD negative, below VWAP",
       "candles": 131
@@ -120,8 +120,8 @@
       "score": -5,
       "rsi": 19.67,
       "atr": 1.36632,
-      "macd": -1.493606,
-      "vwap": 533.496892,
+      "macd": -1.49361,
+      "vwap": 533.4969,
       "reason": "EMA trend down, RSI momentum down, MACD negative, below VWAP",
       "candles": 131
     },
@@ -131,8 +131,8 @@
       "score": -4,
       "rsi": 52.97,
       "atr": 0.911714,
-      "macd": -0.178066,
-      "vwap": 187.405443,
+      "macd": -0.17806,
+      "vwap": 187.405442,
       "reason": "EMA trend down, MACD negative, below VWAP",
       "candles": 131
     },
@@ -142,8 +142,8 @@
       "score": -2,
       "rsi": 49.49,
       "atr": 1.713904,
-      "macd": 1.130177,
-      "vwap": 360.665404,
+      "macd": 1.13017,
+      "vwap": 359.868911,
       "reason": "MACD negative, below VWAP",
       "candles": 131
     },
@@ -153,8 +153,8 @@
       "score": -5,
       "rsi": 29.41,
       "atr": 0.892944,
-      "macd": -0.505046,
-      "vwap": 261.535193,
+      "macd": -0.505049,
+      "vwap": 261.535192,
       "reason": "EMA trend down, RSI momentum down, MACD negative, below VWAP",
       "candles": 131
     },
@@ -165,7 +165,7 @@
       "rsi": 14.25,
       "atr": 1.844365,
       "macd": -0.59898,
-      "vwap": 616.683421,
+      "vwap": 616.683438,
       "reason": "EMA trend down, RSI momentum down, MACD negative, below VWAP",
       "candles": 131
     }
