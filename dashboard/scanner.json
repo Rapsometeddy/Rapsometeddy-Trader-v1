@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T23:19:23.953790+00:00",
+  "updated_at": "2026-11-15T02:54:34.187101+00:00",
   "timeframe": "15m",
   "paper_only": true,
   "session": "New York analysis window 08:00\u201317:00 local time; scanner is informational.",
@@ -38,48 +38,48 @@
       "candles": 472
     },
     "USD/CAD": {
-      "price": 1.4267,
+      "price": 1.4269,
       "signal": "NEUTRAL",
       "score": 1,
-      "rsi": 46.98,
-      "atr": 0.000641,
-      "macd": 0.000283,
+      "rsi": 52.87,
+      "atr": 0.000611,
+      "macd": 0.000278,
       "vwap": null,
       "reason": "EMA trend up, MACD negative",
-      "candles": 475
+      "candles": 476
     },
     "USD/CHF": {
       "price": 0.8382,
       "signal": "NEUTRAL",
       "score": -2,
-      "rsi": 13.72,
-      "atr": 0.000361,
-      "macd": 0.000135,
+      "rsi": 11.7,
+      "atr": 0.000344,
+      "macd": 6.2e-05,
       "vwap": null,
       "reason": "RSI momentum down, MACD negative",
-      "candles": 473
+      "candles": 474
     },
     "AUD/USD": {
       "price": 0.677415,
       "signal": "NEUTRAL",
       "score": -2,
-      "rsi": 29.41,
-      "atr": 0.000187,
-      "macd": -0.000288,
+      "rsi": 38.47,
+      "atr": 0.000161,
+      "macd": -0.000284,
       "vwap": null,
       "reason": "EMA trend down, RSI momentum down, MACD positive",
-      "candles": 474
+      "candles": 475
     },
     "NZD/USD": {
       "price": 0.552517,
       "signal": "NEUTRAL",
       "score": -2,
-      "rsi": 41.3,
-      "atr": 0.000144,
-      "macd": -0.000182,
+      "rsi": 44.19,
+      "atr": 0.000133,
+      "macd": -0.000174,
       "vwap": null,
       "reason": "EMA trend down, RSI momentum down, MACD positive",
-      "candles": 474
+      "candles": 475
     },
     "EUR/JPY": {
       "price": 175.985992,
