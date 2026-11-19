@@ -1,107 +1,107 @@
 {
-  "updated_at": "2026-11-19T01:11:18.133556+00:00",
+  "updated_at": "2026-11-19T08:54:08.250967+00:00",
   "timeframe": "15m",
   "paper_only": true,
   "session": "New York analysis window 08:00\u201317:00 local time; scanner is informational.",
   "markets": {
     "EUR/USD": {
-      "price": 1.098056,
-      "signal": "NEUTRAL",
-      "score": 1,
-      "rsi": 50.0,
-      "atr": 0.000361,
-      "macd": 0.000139,
+      "price": 1.098901,
+      "signal": "BUY SETUP",
+      "score": 4,
+      "rsi": 81.48,
+      "atr": 0.000405,
+      "macd": 0.000482,
       "vwap": null,
-      "reason": "MACD positive",
-      "candles": 372
+      "reason": "EMA trend up, RSI momentum up, MACD positive",
+      "candles": 415
     },
     "GBP/USD": {
-      "price": 1.315236,
-      "signal": "NEUTRAL",
-      "score": -1,
-      "rsi": 47.55,
-      "atr": 0.000418,
-      "macd": -0.000163,
+      "price": 1.315461,
+      "signal": "BUY SETUP",
+      "score": 4,
+      "rsi": 76.8,
+      "atr": 0.000467,
+      "macd": 0.000406,
       "vwap": null,
-      "reason": "EMA trend down, MACD positive",
-      "candles": 372
+      "reason": "EMA trend up, RSI momentum up, MACD positive",
+      "candles": 415
     },
     "USD/JPY": {
-      "price": 159.414001,
+      "price": 159.774002,
       "signal": "BUY SETUP",
       "score": 4,
-      "rsi": 61.47,
-      "atr": 0.064717,
-      "macd": 0.029811,
+      "rsi": 78.76,
+      "atr": 0.069427,
+      "macd": 0.082075,
       "vwap": null,
       "reason": "EMA trend up, RSI momentum up, MACD positive",
-      "candles": 370
+      "candles": 413
     },
     "USD/CAD": {
-      "price": 1.4332,
-      "signal": "NEUTRAL",
-      "score": 2,
-      "rsi": 60.0,
-      "atr": 0.000806,
-      "macd": 0.000199,
-      "vwap": null,
-      "reason": "EMA trend up, RSI momentum up, MACD negative",
-      "candles": 373
-    },
-    "USD/CHF": {
-      "price": 0.84261,
-      "signal": "NEUTRAL",
-      "score": -1,
-      "rsi": 45.77,
-      "atr": 0.000436,
-      "macd": 2.4e-05,
-      "vwap": null,
-      "reason": "MACD negative",
-      "candles": 371
-    },
-    "AUD/USD": {
-      "price": 0.669703,
+      "price": 1.43178,
       "signal": "SELL SETUP",
       "score": -4,
-      "rsi": 26.1,
-      "atr": 0.000527,
-      "macd": -0.000608,
+      "rsi": 16.99,
+      "atr": 0.000801,
+      "macd": -0.000541,
       "vwap": null,
       "reason": "EMA trend down, RSI momentum down, MACD negative",
-      "candles": 372
+      "candles": 416
     },
-    "NZD/USD": {
-      "price": 0.550146,
-      "signal": "BUY SETUP",
-      "score": 4,
-      "rsi": 57.01,
-      "atr": 0.000334,
-      "macd": 0.000154,
+    "USD/CHF": {
+      "price": 0.84264,
+      "signal": "SELL SETUP",
+      "score": -4,
+      "rsi": 27.4,
+      "atr": 0.000429,
+      "macd": -0.000191,
       "vwap": null,
-      "reason": "EMA trend up, RSI momentum up, MACD positive",
-      "candles": 372
+      "reason": "EMA trend down, RSI momentum down, MACD negative",
+      "candles": 414
     },
-    "EUR/JPY": {
-      "price": 175.001999,
-      "signal": "BUY SETUP",
-      "score": 4,
-      "rsi": 70.93,
-      "atr": 0.065501,
-      "macd": 0.057095,
-      "vwap": null,
-      "reason": "EMA trend up, RSI momentum up, MACD positive",
-      "candles": 370
-    },
-    "GBP/JPY": {
-      "price": 209.649002,
+    "AUD/USD": {
+      "price": 0.670511,
       "signal": "NEUTRAL",
       "score": 2,
-      "rsi": 60.59,
-      "atr": 0.081785,
-      "macd": 0.011778,
+      "rsi": 73.51,
+      "atr": 0.000337,
+      "macd": 0.000357,
       "vwap": null,
       "reason": "RSI momentum up, MACD positive",
-      "candles": 372
+      "candles": 415
+    },
+    "NZD/USD": {
+      "price": 0.551816,
+      "signal": "BUY SETUP",
+      "score": 4,
+      "rsi": 83.02,
+      "atr": 0.000301,
+      "macd": 0.000528,
+      "vwap": null,
+      "reason": "EMA trend up, RSI momentum up, MACD positive",
+      "candles": 415
+    },
+    "EUR/JPY": {
+      "price": 175.539993,
+      "signal": "BUY SETUP",
+      "score": 4,
+      "rsi": 94.39,
+      "atr": 0.096001,
+      "macd": 0.172632,
+      "vwap": null,
+      "reason": "EMA trend up, RSI momentum up, MACD positive",
+      "candles": 413
+    },
+    "GBP/JPY": {
+      "price": 210.173996,
+      "signal": "BUY SETUP",
+      "score": 4,
+      "rsi": 87.56,
+      "atr": 0.113074,
+      "macd": 0.177316,
+      "vwap": null,
+      "reason": "EMA trend up, RSI momentum up, MACD positive",
+      "candles": 415
     },
     "AAPL": {
       "price": 352.450012,
@@ -110,7 +110,7 @@
       "rsi": 39.14,
       "atr": 0.684982,
       "macd": -0.053693,
-      "vwap": 352.726999,
+      "vwap": 352.539062,
       "reason": "EMA trend down, RSI momentum down, MACD negative, below VWAP",
       "candles": 131
     },
@@ -121,7 +121,7 @@
       "rsi": 66.46,
       "atr": 1.788467,
       "macd": 0.674644,
-      "vwap": 505.152735,
+      "vwap": 506.668262,
       "reason": "RSI momentum up, MACD positive, above VWAP",
       "candles": 131
     },
@@ -132,7 +132,7 @@
       "rsi": 39.2,
       "atr": 0.693951,
       "macd": -0.669462,
-      "vwap": 151.201039,
+      "vwap": 151.536875,
       "reason": "EMA trend down, RSI momentum down, MACD positive, below VWAP",
       "candles": 131
     },
@@ -143,7 +143,7 @@
       "rsi": 48.39,
       "atr": 1.675367,
       "macd": 0.589583,
-      "vwap": 381.262142,
+      "vwap": 383.469434,
       "reason": "EMA trend up, MACD negative, above VWAP",
       "candles": 131
     },
@@ -154,7 +154,7 @@
       "rsi": 64.34,
       "atr": 0.913862,
       "macd": 1.555363,
-      "vwap": 265.333671,
+      "vwap": 266.417199,
       "reason": "EMA trend up, RSI momentum up, MACD negative, above VWAP",
       "candles": 131
     },
@@ -165,7 +165,7 @@
       "rsi": 50.84,
       "atr": 2.128536,
       "macd": -0.629168,
-      "vwap": 615.026689,
+      "vwap": 615.641229,
       "reason": "EMA trend down, MACD positive, above VWAP",
       "candles": 131
     }
