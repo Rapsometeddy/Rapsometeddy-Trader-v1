@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-22T11:54:29.236459+00:00",
+  "updated_at": "2026-11-22T19:25:02.844440+00:00",
   "paper_only": true,
   "presets": {
     "Balanced": {
@@ -223,8 +223,8 @@
       }
     },
     "USD/CAD": {
-      "price": 1.434000015258789,
-      "timestamp": 1795219140,
+      "price": 1.433899998664856,
+      "timestamp": 1795214160,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -348,7 +348,7 @@
     },
     "AUD/USD": {
       "price": 0.6619009971618652,
-      "timestamp": 1795219140,
+      "timestamp": 1795213740,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -410,7 +410,7 @@
     },
     "NZD/USD": {
       "price": 0.5470459461212158,
-      "timestamp": 1795219140,
+      "timestamp": 1795213740,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
