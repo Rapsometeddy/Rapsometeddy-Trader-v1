@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24T23:28:39.252929+00:00",
+  "updated_at": "2026-11-25T00:02:46.006953+00:00",
   "paper_only": true,
   "presets": {
     "Balanced": {
@@ -37,8 +37,8 @@
   },
   "markets": {
     "EUR/USD": {
-      "price": 1.0964912176132202,
-      "timestamp": 1795562864,
+      "price": 1.096611499786377,
+      "timestamp": 1795564904,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -48,11 +48,8 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 1.0911074876785278
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         },
         "Fast Day Trade": {
           "starting_balance": 10000.0,
@@ -62,11 +59,8 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 1.0909883975982666
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         },
         "Trend Study": {
           "starting_balance": 10000.0,
@@ -76,11 +70,8 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 1.0909883975982666
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         },
         "Conservative": {
           "starting_balance": 10000.0,
@@ -90,17 +81,14 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 1.0909883975982666
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         }
       }
     },
     "GBP/USD": {
-      "price": 1.3112690448760986,
-      "timestamp": 1795562864,
+      "price": 1.3112002611160278,
+      "timestamp": 1795564964,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -110,11 +98,8 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "BUY",
-          "open_position": {
-            "side": "BUY",
-            "entry": 1.3036450147628784
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         },
         "Fast Day Trade": {
           "starting_balance": 10000.0,
@@ -124,11 +109,8 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "BUY",
-          "open_position": {
-            "side": "BUY",
-            "entry": 1.3036450147628784
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         },
         "Trend Study": {
           "starting_balance": 10000.0,
@@ -138,11 +120,8 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "BUY",
-          "open_position": {
-            "side": "BUY",
-            "entry": 1.3036450147628784
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         },
         "Conservative": {
           "starting_balance": 10000.0,
@@ -152,17 +131,14 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "BUY",
-          "open_position": {
-            "side": "BUY",
-            "entry": 1.3036450147628784
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         }
       }
     },
     "USD/JPY": {
-      "price": 159.27200317382812,
-      "timestamp": 1795562919,
+      "price": 159.28700256347656,
+      "timestamp": 1795564964,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -172,11 +148,8 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 158.8679962158203
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         },
         "Fast Day Trade": {
           "starting_balance": 10000.0,
@@ -186,11 +159,8 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 158.8679962158203
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         },
         "Trend Study": {
           "starting_balance": 10000.0,
@@ -200,11 +170,8 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 158.8679962158203
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         },
         "Conservative": {
           "starting_balance": 10000.0,
@@ -214,17 +181,14 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 158.8679962158203
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         }
       }
     },
     "USD/CAD": {
-      "price": 1.4271399974822998,
-      "timestamp": 1795562919,
+      "price": 1.4272500276565552,
+      "timestamp": 1795564965,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -234,11 +198,8 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 1.4362000226974487
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         },
         "Fast Day Trade": {
           "starting_balance": 10000.0,
@@ -248,11 +209,8 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "BUY",
-          "open_position": {
-            "side": "BUY",
-            "entry": 1.4368200302124023
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         },
         "Trend Study": {
           "starting_balance": 10000.0,
@@ -262,11 +220,8 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "BUY",
-          "open_position": {
-            "side": "BUY",
-            "entry": 1.4368200302124023
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         },
         "Conservative": {
           "starting_balance": 10000.0,
@@ -276,17 +231,14 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "BUY",
-          "open_position": {
-            "side": "BUY",
-            "entry": 1.4368200302124023
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         }
       }
     },
     "USD/CHF": {
       "price": 0.8356500267982483,
-      "timestamp": 1795562918,
+      "timestamp": 1795564964,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -296,11 +248,8 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 0.8412299752235413
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         },
         "Fast Day Trade": {
           "starting_balance": 10000.0,
@@ -310,11 +259,8 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 0.8412299752235413
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         },
         "Trend Study": {
           "starting_balance": 10000.0,
@@ -324,11 +270,8 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 0.8412299752235413
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         },
         "Conservative": {
           "starting_balance": 10000.0,
@@ -338,141 +281,20 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 0.8412299752235413
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         }
       }
     },
     "AUD/USD": {
-      "price": 0.6639665365219116,
-      "timestamp": 1795562864,
-      "presets": {
-        "Balanced": {
-          "starting_balance": 10000.0,
-          "ending_balance": 10000.0,
-          "total_pnl": 0.0,
-          "return_pct": 0.0,
-          "trades": 0,
-          "wins": 0,
-          "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 0.6628223061561584
-          }
-        },
-        "Fast Day Trade": {
-          "starting_balance": 10000.0,
-          "ending_balance": 10000.0,
-          "total_pnl": 0.0,
-          "return_pct": 0.0,
-          "trades": 0,
-          "wins": 0,
-          "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 0.6628223061561584
-          }
-        },
-        "Trend Study": {
-          "starting_balance": 10000.0,
-          "ending_balance": 10000.0,
-          "total_pnl": 0.0,
-          "return_pct": 0.0,
-          "trades": 0,
-          "wins": 0,
-          "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 0.6628223061561584
-          }
-        },
-        "Conservative": {
-          "starting_balance": 10000.0,
-          "ending_balance": 10000.0,
-          "total_pnl": 0.0,
-          "return_pct": 0.0,
-          "trades": 0,
-          "wins": 0,
-          "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 0.6628223061561584
-          }
-        }
-      }
+      "error": "'DataFrame' object has no attribute 'close'"
     },
     "NZD/USD": {
-      "price": 0.5482155680656433,
-      "timestamp": 1795562864,
-      "presets": {
-        "Balanced": {
-          "starting_balance": 10000.0,
-          "ending_balance": 10000.0,
-          "total_pnl": 0.0,
-          "return_pct": 0.0,
-          "trades": 0,
-          "wins": 0,
-          "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 0.5449591279029846
-          }
-        },
-        "Fast Day Trade": {
-          "starting_balance": 10000.0,
-          "ending_balance": 10000.0,
-          "total_pnl": 0.0,
-          "return_pct": 0.0,
-          "trades": 0,
-          "wins": 0,
-          "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 0.5449591279029846
-          }
-        },
-        "Trend Study": {
-          "starting_balance": 10000.0,
-          "ending_balance": 10000.0,
-          "total_pnl": 0.0,
-          "return_pct": 0.0,
-          "trades": 0,
-          "wins": 0,
-          "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 0.5449591279029846
-          }
-        },
-        "Conservative": {
-          "starting_balance": 10000.0,
-          "ending_balance": 10000.0,
-          "total_pnl": 0.0,
-          "return_pct": 0.0,
-          "trades": 0,
-          "wins": 0,
-          "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 0.5449591279029846
-          }
-        }
-      }
+      "error": "'DataFrame' object has no attribute 'close'"
     },
     "EUR/JPY": {
-      "price": 174.60400390625,
-      "timestamp": 1795562920,
+      "price": 174.61300659179688,
+      "timestamp": 1795564965,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -482,11 +304,8 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 173.2899932861328
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         },
         "Fast Day Trade": {
           "starting_balance": 10000.0,
@@ -496,11 +315,8 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 173.2899932861328
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         },
         "Trend Study": {
           "starting_balance": 10000.0,
@@ -510,11 +326,8 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 173.2899932861328
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         },
         "Conservative": {
           "starting_balance": 10000.0,
@@ -524,17 +337,14 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 173.2899932861328
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         }
       }
     },
     "GBP/JPY": {
-      "price": 208.83799743652344,
-      "timestamp": 1795562919,
+      "price": 208.8350067138672,
+      "timestamp": 1795564965,
       "presets": {
         "Balanced": {
           "starting_balance": 10000.0,
@@ -544,11 +354,8 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 207.10000610351562
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         },
         "Fast Day Trade": {
           "starting_balance": 10000.0,
@@ -558,11 +365,8 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 207.10000610351562
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         },
         "Trend Study": {
           "starting_balance": 10000.0,
@@ -572,11 +376,8 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 207.10000610351562
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         },
         "Conservative": {
           "starting_balance": 10000.0,
@@ -586,11 +387,8 @@
           "trades": 0,
           "wins": 0,
           "losses": 0,
-          "last_signal": "SELL",
-          "open_position": {
-            "side": "SELL",
-            "entry": 207.10000610351562
-          }
+          "last_signal": "HOLD",
+          "open_position": null
         }
       }
     }
